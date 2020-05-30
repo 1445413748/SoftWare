@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="stylesheet" href="<?= HC ?>myeva.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<div class="user-body" style="min-height: 300px;">
+		<div class="space"></div>
+		<div class="user-box">
+			<?php $this->orderleft(); ?>
+			<div class="user-main" style="min-height:300px;">
+				<div class="main-title" style="background: #fff; border-bottom: 1px solid #ccc;">
+					<span ">我的评论</span>
+				</div>
+				<?php if (empty($res)): ?>
+				<div class="eva" style="width: 500px;height: 200px;line-height:200px;margin-top:25px;margin-left:260px;background: #f1f1f1;text-align: center;">
+					暂无评论信息
+				</div>	
+				<?php else: ?>
+				<?php foreach ($res as $k => $v): ?>
+				<div class="eva" style="width: 100%;border-bottom: 1px solid #ccc;padding: 10px 0px;">
+					<p style="margin-left: 10px">订单编号: <?= $v['ordernum']?>
+						<span style="float: right;margin-right: 20px;"><?= $v['createtime']?></span>
+					</p>
+					<p style="margin-top: 10px;padding:10px 10px;">评价内容:
+						<?= $v['content']?>
+					</p>
+					<p style="margin-left: 10px;margin-top: 5px">
+						<a href="index.php?c=myorder&m=deleva&id=<?= $v['id']?>">删除此评论</a>
+					</p>
+				</div>
+				<?php endforeach ?>
+				<?php endif ?>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

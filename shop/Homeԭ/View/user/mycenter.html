@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人资料</title>
+	<link rel="stylesheet" href="<?= HC ?>mycenter.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<?php $this->usertop(); ?>
+	<!-- 主体开始 -->
+	<div class="bd">
+		<div class="bd-s">
+			<!-- 左侧菜单 -->
+			<?php $this->userleft(); ?>
+			<!-- 右侧资料主体 -->
+			<div class="data-bd">
+				<!-- 修改头像 -->
+				<div class="icon">
+					<form action="index.php?c=mycenter&m=upicon" enctype="multipart/form-data" method="post">	
+						<?php if( empty($res['icon']) ):?>
+						<img src="<?= AI ?>people_fill.png" alt="" >
+						<?php else: ?>
+						<img src="<?= imgUrl($res['icon']) ?>" width="150" height="150">
+						<?php endif ?>
+						<div class="sub-box">
+							<input type="hidden" name="id" value="<?= $res['id']?>">
+							<input name="icon" size="40" type="file" class="ipt-icon" value="">
+							<p><input style='cursor:pointer;' type="submit" value="上 传 头 像" class="sub-icon"></p>
+						</div>	
+					</form>
+				</div>
+				<!-- 个人资料 -->
+				<div class="user-data">
+					<form>
+						<ul>
+							<li>
+								<label>昵称 : </label>
+								<input type="text" name="name" maxlength="15" value="<?= $res['name']?>" readonly>
+							</li>
+							<li>
+								<label>性别 : </label>
+								<input type="text" name="sex" value="<?= $res['sex']==1?'男':'女' ?>" readonly>
+							</li>
+							<li>
+								<label>年龄 : </label>
+								<input type="text" name="age"  value="<?= $res['age'] ?>" readonly>
+							</li>
+							<li>
+								<label>邮箱 : </label>
+								<input type="text" name="email" maxlength="20" value="<?= $res['email'] ?>" readonly>
+							</li>
+							<li>
+								<label>手机 : </label>
+								<input type="text" name="tel" maxlength="11" value="<?= $res['tel'] ?>" readonly>
+							</li>
+							<li>
+								<label>地址 : </label>
+								<input type="text" name="address" maxlength="100" value="<?= $res['address'] ?>" readonly>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>	
+</body>
+</html>

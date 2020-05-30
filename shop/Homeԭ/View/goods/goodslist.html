@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360官方商城</title>
+	<link rel="stylesheet" href="<?= HC ?>goods-list.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<!-- 商品展示 -->
+	<div class="goods-category">
+		<div class="category-list">
+			<span>分类:</span>
+			<a href="">360 N6</a>
+			<a href="">360 N6Pro</a>
+			<a href="">360 N7</a>
+			<a href="">ipad mini4</a>
+			<a href="">ipad Pro</a>
+		</div>
+		<div class="category-list">
+			<span>品牌:</span>
+			<a href="">360</a>
+			<a href="">apple</a>
+		</div>
+		<div class="category-list">
+			<span>排序:</span>
+			<a href="">默认</a>
+			<a href="">价格</a>
+			<a href="">销量</a>
+		</div>
+	</div>
+	<div class="goodsbox">
+		<!-- 商品列表 -->
+		<div class="goodswrap">
+			<ul class="goodsmain">
+				<?php if (empty($res)): ?>
+					<div style="width: 100%;height: 100px;line-height:100px;background: #f5f5f5;text-align: center;font-size: 25px;">此分类暂未添加商品...</div>
+				<?php else: ?>
+				<?php foreach ($res as $k => $v): ?>
+					<li>
+						<a href="index.php?c=goods&id=<?= $v['id']?>">
+							<div class="goods-img">
+								<img src="<?= imgUrl($v['icon'])?>" alt="">
+							</div>
+							<span class="goods-title">
+							<?= $v['name'] ?></span>
+							<p class="goods-price">&yen; <?= $v['price'] ?></p>
+						</a>
+					</li>
+				<?php endforeach ?>
+				<?php endif ?>		
+			</ul>
+		</div>
+		<!-- 分页按钮 -->
+		<div class="paging">
+			<?= $page->goodsshowPage() ?>
+			<!-- <a href="">首页</a>
+			<a href="">上一页</a>
+			<a href="">1</a>
+			<a href="">2</a>
+			<a href="">3</a>
+			<a href="">下一页</a>
+			<a href="">尾页</a> -->
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<div class="mod-footer">
+		<div class="foot-banner">
+			<div class="foot-item">
+				<div class="icon7"><i>&#xe691;</i>
+				&nbsp;7天无理由退货
+				</div>
+				<div class="icon7"><i>&#xe636;</i>
+				&nbsp;质量问题15天包换
+				</div>
+				<div class="icon7"><i>&#xe600;</i>
+				&nbsp;满99元包邮
+				</div>
+			</div>
+		</div>
+		<div class="foot-help">
+			<div class="foot-help-main">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd><a href="">用户登录与密码找回</a></dd>
+					<dd><a href="">用户注册协议</a></dd>
+					<dd><a href="">购买指南</a></dd>
+					<dd><a href="">支付方式</a></dd>
+					<dd><a href="">赠送与说明</a></dd>
+					<dd><a href="">用户注销</a></dd>
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+					<dd><a href="">7日无理由退货</a></dd>
+					<dd><a href="">质量问题15日内换货</a></dd>
+					<dd><a href="">保修条款</a></dd>
+					<dd><a href="">售后服务运费规则</a></dd>
+				</dl>
+				<dl>
+					<dt>联系我们</dt>
+					<dd><span>400-6822-360</span></dd>
+					<dd>周一至周五9:00-18:00</dd>
+					<dd><span>400-0111-366 <i>（手机类产品）</i></span></dd>
+					<dd>周一至周日 9:00-21:00</dd>
+					<dd>（仅收市话费）</dd>
+				</dl>
+				<dl>
+					<dd><img src="<?= HI ?>ewm.png"></dd>
+				</dl>
+			</div>
+
+		</div>
+		<div class="copyright">
+			<p>360商城©2013-2018 360公司版权所有 京ICP备17017089号 京公网安备11000002000006号</p>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

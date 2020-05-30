@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="stylesheet" href="<?= HC ?>myoder.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<div class="user-body">
+		<div class="space"></div>
+		<div class="user-box">
+			<?php $this->orderleft(); ?>
+			<div class="user-main">
+				<div class="main-title">
+					<span>我的订单</span>
+				</div>
+				<div class="oder-list">
+					<ul class=order_type>
+						<li>
+							<a href="index.php?c=myorder&m=getALL">全部订单</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=obligation">待付款</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=unshipped">待发货</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=waitgoods">待收货</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=waiteva">待评价</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=cancel">已取消</a>
+						</li>
+					</ul>
+					<table>
+						<thead>
+							<tr class="list-title">
+								<th class="col1">订单信息</th>
+								<th class="col2">订单金额</th>
+								<th class="col3">支付状态</th>
+								<th class="col4">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if (empty($res)): ?>
+								<tr class="list-oder-info">
+									<td colspan="4" style="height: 200px; text-align:center;font-size: 25px;color: #bbbbce;">暂无此状态订单</td>
+								</tr>
+							<?php else: ?>
+								<?php foreach ($res as $k => $v): ?>
+									
+									<tr class="list-oder-info">
+										<td colspan="4">
+											<input type="hidden">
+											订单编号:
+											<b><?= $v['ordernum']?></b>
+											提交时间：<?= $v['ordertime']?>
+										</td>
+									</tr>
+									<tr class="oder-detail">
+										<td class="item-product-td">
+											<div class="goods-box">
+												<a href=""><img src="<?= imgUrl($v['icon']) ?>" ></a>
+												<div class="goods-text">
+													<a href=""><?= $v['name']?></a>
+												</div>
+												<div class="goods-num">	X<?= $v['cartnum']?>
+												</div>
+											</div>
+										</td>
+										<td class="goods-price">￥<?= $v['totalprice']?></td>
+										<td class="wait">已付款</td>
+										<td class="go-pay">
+										<?php if ($v['orderstatus']==2): ?>
+											<a class="pay-btn">待发货</a>
+										<?php elseif ($v['orderstatus']==1): ?>
+											<a href="index.php?c=myorder&m=affirm&id=<?= $v['orderid'] ?>" class="pay-btn">确认收货</a>
+										<?php else: ?>
+											<?php if ($v['orderstatus']==3): ?>
+												<a href="index.php?c=myorder&m=evaluate&orderid=<?= $v['orderid']?>&goodsid=<?= $v['goodsid']?>" class="pay-btn">去评论</a>
+											<?php else: ?>
+												<a href="" class="pay-btn">已完成</a>
+											<?php endif ?>
+										<?php endif ?>
+											<p>
+												<a href="index.php?c=goods&id=<?= $v['goodsid']?>">详情</a>
+											</p>
+										</td>
+									</tr>								
+								<?php endforeach ?>
+							<?php endif ?>
+						</tbody>
+					</table>
+				</div>
+				<ul class="page">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

@@ -1,0 +1,68 @@
+	<div class="top-warp">
+		<div class="top-main">
+			<ul>
+				<li class="top-item-l"><a href="">帮助中心</a></li>
+				<li class="top-item-l"><a href="">收藏本站</a></li>
+				<li class="top-item-r"><a href=""><i></i>手机360商城</a></li>
+				<li class="top-item-r"><a href="index.php?c=myorder&m=getALL">我的订单</a></li>
+				<?php if ( empty($_SESSION['user']['id'] )): ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=register">注册</a></li>
+				<li class="top-item-r"><a href="index.php?c=login">登陆</a></li>
+				<?php else: ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=lgout">退出</a></li>
+				<li class="top-item-r"><a href="index.php?c=mycenter">个人中心</a></li>
+				<?php endif ?>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- head-logo部分 -->
+	<div class="head-warp">
+		<div class="head-main">
+			<div class="logo-img">
+				<a href="index.php"><img src="<?= HI ?>logo.png"></a>
+			</div>
+			<div class="search">
+				<form action="" class="search-item">
+					<input type="text" class="search-txt">
+					<input type="submit" value="搜索" class="search-btn">
+				</form>
+				<ul>
+					<li><a href="">N7</a></li>
+					<li><a href="">儿童手表</a></li>
+					<li><a href="">N6</a></li>
+					<li><a href="">行车记录仪</a></li>
+					<li><a href="">摄像机夜视版</a></li>
+				</ul>
+			</div>
+			<div class="head-cart">
+				<a href="index.php?c=cart">
+					<i class="icon"></i>
+					<span>我的购物车</span>
+				</a>
+			</div>
+			<div class=""></div>
+		</div>
+	</div>
+
+	<!-- 菜单部分 -->
+	<div class="nav-warp">
+		<div class="nav-main">
+
+			<a href="">
+				<div class="nav-main-l">
+					全部智能酷品
+				</div>
+			</a>
+
+
+			
+			<ul>
+				<?php foreach ($cate as $k => $v): ?>
+					<li><a href="index.php?c=cate&id=<?= $v['id'] ?>"><?= $v['name']?></a></li>
+				<?php endforeach ?>
+			</ul>
+			
+
+		</div>
+	</div>

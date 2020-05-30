@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新增商品</title>
+	<link rel="stylesheet" href="<?= AC ?>order-goods.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>添加分类</small></h3>
+			</div>
+			<div class="ibox-content">	
+				<form method="post" action="index.php?c=category&m=doAdd" class="form-main">
+
+					<div class="form-group">
+						<ul>
+							<li>
+								<span class="form-title">分类名称:
+								</span>
+								<input class="form-text" name="name" type="text" >
+							</li>
+							<li>
+								<span class="form-title">商品分类ID:
+								</span>
+								<input class="form-text" name="pid" value="<?= $pid ?>" type="text" readonly>
+							</li>
+							<li>
+								<span class="form-title">分类路径:
+								</span>
+								<input class="form-text" name="path" value="<?= $path ?>" type="text" readonly>
+							</li>
+							<li>
+								<span class="form-title">是否上架:</span>
+								<label class="is-goods-sale">
+									<input type="radio" name="display" value="1" checked>上架
+								</label>
+								<label class="is-goods-sale">
+									<input type="radio" name="display" value="2">下架
+								</label>
+							</li>
+							<li>
+								<span class="form-title"></span>
+								<input class="form-submit-btn" type="submit" value="提交" name="">
+								<input name="" type="reset" value="重置" class="form-submit-btn">
+							</li>
+						</ul>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商城后台</title>
+	<link rel="stylesheet" href="<?= AC ?>common.css">
+	<link rel="icon" href="<?= AI ?>favicon.ico">
+</head>
+<body>
+	<div class="admin-wrap">
+		<div class="admin-head">
+			<div class="head-logo">
+				<img src="<?= AI ?>/admin2.png" alt=""> 
+			</div>
+		
+			<ul>
+				<li><a href="http://reseq.cn/shop/Home/index.php"><img src="<?= AI ?>/wujiaoxing.png" alt=""><p>站点首页</p></a></li>
+				<li><a href="index.php?c=login&m=logout"><img src="<?= AI ?>/close.png" alt=""><p>退出</p></a></li>
+			</ul>
+		</div>
+
+		<div class="admin-left">
+			<div class="left-nav">
+				<h3>系统管理</h3>
+				<ul class="">
+
+					<li>
+						<dl>
+							<dt>统计管理</dt>
+							<dd><a href="index.php" >后台统计</a></dd>
+					</li>
+					<li>
+						<dl>
+							<dt>商品信息</dt>
+							<dd><a href="index.php?c=goods&m=index" target="myIframe">商品列表</a></dd>
+							<dd><a href="index.php?c=category&m=index" target="myIframe">商品分类</a></dd>
+							<dd><a href="index.php?c=category&m=add" target="myIframe">添加商品分类</a></dd>
+						</dl>
+					</li>
+
+					<li>
+						<dl>
+							<dt>订单信息</dt>
+							<dd><a href="index.php?c=order&m=index" target="myIframe">订单列表</a></dd>
+							<dd><a href="index.php?c=evaluate&m=index" target="myIframe">评论管理</a></dd>
+						</dl>
+					</li>
+
+					<li>
+						<dl>
+							<dt>用户管理</dt>
+							<dd><a href="index.php?c=user&m=index" target="myIframe">用户列表</a></dd>
+							<dd><a href="index.php?c=user&m=add" target="myIframe">添加用户</a></dd>
+							<dd><a href="index.php?c=others&m=import" target="myIframe">导入账密</a></dd>
+						</dl>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="admin-right">
+			<div class="rigth-wrap">
+				<iframe src="index.php?c=index&m=info"  height="100%" width="100%" name="myIframe" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

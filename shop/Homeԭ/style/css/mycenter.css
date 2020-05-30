@@ -1,0 +1,271 @@
+/* 初始化 */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}   
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}   
+a{color:#2d374b;text-decoration:none;font-style: normal}   
+a:hover{color:#cd0200;}   
+em{font-style:normal}   
+li{list-style:none}   
+img{border:0;vertical-align:middle}   
+table{border-collapse:collapse;border-spacing:0}   
+p{word-wrap:break-word}  
+strong{font-weight:normal}
+
+
+
+@font-face{
+	font-family: 'TB';
+	src: url('../iconfont/iconfont.ttf');
+}
+
+body{
+	font-family: 'TB','微软雅黑';
+	min-width: 1240px;
+}
+
+/* 顶部灰色导航栏 */
+
+.top-warp{
+	width: 100%;
+	background: #e3e4e5;
+	/*height: 36px;*/
+}
+
+.top-main{
+	width: 1240px;
+	height: 36px;
+	margin: 0 auto;
+	line-height: 36px;
+	font-size: 12px;
+	/* background: #e3e4e5; */
+	/*border: 1px red solid;*/
+
+}
+.top-main a{
+	color: #999;
+}
+
+.top-main a:hover{
+	color: #23ac38;
+
+}
+
+.top-item-l{
+	float: left;
+	margin-right:10px; 
+}
+
+.top-item-r{
+	float: right;
+	margin-right:10px;
+}
+.top-main ul li:nth-child(3){
+	margin-right:0px;
+}
+
+.top-item-r i{
+	display: inline-block;
+	background:url(../images/head-icons1.png) no-repeat; 
+	height: 18px;
+	width: 18px;
+	vertical-align: middle;
+	margin-right: 5px;
+
+}
+
+
+/* 头部开始 */
+.hd{
+	width: 100%;
+}
+
+.uc-header{
+	margin: 0 auto;
+	height: 75px;
+    margin: 0 auto;
+    width: 960px;
+    /* border: 1px solid red; */
+}
+/* LOGO图 */
+.uc-header .logo{
+	float: left;
+	font-size: 	100%;
+}
+.uc-header .logo a{
+	background: url(../images/uc-logo.png) no-repeat;
+    display: block;
+    height: 45px;
+    margin-top: 16px;
+    width: 366px;
+}
+.uc-header .nav-login{
+    float: right;
+    padding-top: 40px;
+}
+.uc-header .nav-login ul{
+	float: right;
+}
+.uc-header .nav-login ul li{
+	float: right;
+}
+
+.uc-header .nav-login ul li :hover{
+	color:#1eb009;
+}
+
+/* 头部导航 */
+.uc-nav{
+	background: #59ce2a;
+    height: 45px;
+    width: 100%;
+}
+.uc-nav .nav{
+	margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+.nav .main-nav{
+	float: left;
+}
+.nav .main-nav li{
+	float: left;
+}
+.nav .main-nav li a{
+	display: block;
+	color:#fff;
+    font: 18px/45px "Microsoft Yahei";
+    padding: 0 25px;
+    /* border: 1px solid #2db015; */
+    line-height: 43px;
+    padding: 0 24px;
+}
+.nav .main-nav li :hover{
+	background: #33b818;
+}
+/* 主体开始 */
+.bd{
+	width: 100%;
+}
+.bd-s{
+	width: 1240px;
+	margin: 20px auto;
+	margin-bottom: 70px;
+	min-height: 600px;
+	/* border: 1px solid red; */
+}
+/* 左侧菜单 */
+.user-menu{
+	float: left;
+    width: 155px;
+    margin-top: 20px;
+    margin-left: 160px;
+    margin-right: 10px;
+    padding-bottom: 160px;
+}
+.menu-title{
+	height: 42px;
+    line-height: 42px;
+    background: #82C92F;
+    border-bottom: none;
+    width: 157px;
+}
+.menu-title span{
+	margin-left: 25px;
+	font-size: 18px;
+    color: #FFF;
+}
+
+.menu-list{
+	background: #FFF;
+    border: solid 1px #EEE;
+    border-top: none;
+    margin-bottom: 10px;
+    width: 155px;
+}
+.menu-list a{
+	display: block;
+    padding-left: 25px;
+    width: 130px;
+    height: 60px;
+    font-size: 15px;
+    line-height: 60px;
+    color: #333;
+    background-color: #F8F8FA;
+}
+.menu-list a:hover{
+	background:#f2f2f2;
+	color:#82C92F;
+}
+.menu-list a:nth-child(1){
+	color:#82C92F;
+}
+
+/* 右侧修改资料 */
+.data-bd{
+	float: left;
+	margin: 20px;
+	border: 1px solid #ccc;
+	width: 800px;
+	min-height: 500px; 
+	background: #f2f2f2;
+}
+/* 头像 */
+.icon{
+	margin-top: 40px; 
+	width: 800px;
+	height: 150px;
+	/* background: #f2f2f2; */
+}
+.icon img{
+	float: left;
+	margin-left: 40px; 
+	border-radius: 2%; 
+}
+/* 修改头像 */
+.sub-box{
+	float: left;
+	margin-left: 20px;
+	margin-top: 90px;
+}
+.ipt-icon{
+	outline: none;
+	margin-bottom: 10px;
+}
+
+/* 个人资料 */
+.user-data{
+	width: 650px;
+	min-height: 200px;
+	margin-top: 30px;
+	margin-left: 40px;
+	padding-bottom: 20px;
+	border: 1px solid #f2f2f2;
+}
+.user-data ul li{
+	margin-top: 20px;
+}
+.user-data ul li label{
+	font-size: 20px;
+}
+.user-data ul li input{
+	border: none;
+	width: 550px;
+	font-size: 16px;
+	padding-left: 5px;
+	background: #f2f2f2;
+}
+
+/* 底部 */
+.bottom-box{
+	width:100%;
+
+}
+.bottom-copyright{
+	width: 1240px;
+	margin: 0 auto;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+
+
+

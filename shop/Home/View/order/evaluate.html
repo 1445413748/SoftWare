@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的评价</title>
+	<link rel="stylesheet" href="<?= HC ?>evaluate.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<div class="user-body">
+		<div class="space"></div>
+		<div class="user-box">
+				<?php $this->orderleft(); ?>
+			<div class="evaluate-box">
+				<div class="evaluate-title">
+					<span>我的评价</span>
+				</div>
+				<div class="evaluate-bd">
+					<form action="index.php?c=myorder&m=doevaluate" method="post">
+						<div class="radio-box">
+							<input type="hidden" name="orderid" value="<?= $res['orderid']?>">
+							<input type="hidden" name="goodsid" value="<?= $res['goodsid']?>">
+							<input type="hidden" name="userid" value="<?= $_SESSION['user']['id']?>">
+							<span>评价:</span>
+							<label for="">
+							<input type="radio" name="score" value="1">
+							<b>好评</b>
+							</label>
+							<label for="">
+							<input type="radio" name="score" value="2">
+							<b>中评</b>
+							</label>
+							<label for="">
+							<input type="radio" name="score" value="3">
+							<b>差评</b>
+							</label>
+						</div>
+						<div class="eva-content">
+							<p>评价内容:</p>
+							<textarea name="content" id="" cols="10" rows="8"></textarea>
+						</div>
+						<div class="sub-box">
+							<input type="submit">
+						</div>
+					</form>						
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php $this->footer(); ?>
+</body>
+</html>

@@ -1,0 +1,211 @@
+body,ul,li,i,a,span,p,dl,dt,dd,h2{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+	font-style: normal;
+	text-decoration: none;
+}
+
+@font-face{
+	font-family: 'TB';
+	src: url('../iconfont/iconfont.ttf');
+}
+
+body{
+	background: #fff;
+    color: #666;
+    font-size: 12px;
+    font-family: '微软雅黑','TB';
+    line-height: 1.5;
+}
+.login-box{
+	width: 100%;
+}
+.top-login{
+	width: 1240px;
+	margin: 0 auto;
+	padding: 20px 0;
+	/*line-height: 94px;*/
+	/*border: 1px solid red;*/
+}
+.logo-img{
+    height: 48px;
+    width: 168px;
+    /*border: 1px solid green;*/
+
+}
+.login-bgbox{
+	width: 100%;
+	background: url(../images/login-bg.jpg);
+	background-size: auto 100%;
+    background-position: 39% center;
+    background-repeat: no-repeat;
+    height: 645px;
+}
+.login-bg{
+	margin: 0 auto;
+	width: 1240px;
+	height: 645px;
+	/*border: 1px solid red;*/
+}
+
+.login-main{
+	width: 360px;
+	height: 490px;
+	float: right;
+	background: #fff;
+	border-radius: 5px;
+	margin-top:80px;
+	margin-right: 50px;
+
+}
+
+.panel{
+	width: 360px;
+	height: 65px;
+    text-align: center;
+	/*border: 1px solid red;*/
+}
+.panel-title{
+	width: 250px;
+	margin: 20px auto;
+
+}
+.panel-title ul li{
+	float: left;
+	line-height: 30px;
+}
+.panel-title ul li a{
+	font-size: 20px;
+}
+.panel-title ul li a span{
+	color: green;
+	margin-right: 20px;
+	/*padding-right: 30px;*/
+	border-bottom: 1px solid green;
+	
+}
+
+.panel-title ul li a i{
+	color: black;
+	border-left: 1px solid #ccc;
+	padding-left: 20px;
+
+}
+.panel-title ul li a i:hover{
+	color: green;
+}
+
+.user-name{
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 300px;
+	height: 42px;
+	margin:0 auto;
+	padding-left:5px;
+	display: block;
+	
+}
+.password{
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 300px;
+	height: 42px;
+	margin:20px auto;
+	padding-left: 5px;
+	display: block;
+	text-decoration: none;
+}
+.user-name:focus{
+	border-color: green; 
+}
+.password:focus{
+	border-color: green;
+}
+.submit{
+	width: 300px;
+	height: 42px;
+	background: green;
+	border-radius: 3px;
+	margin: 10px auto;
+	display: block;
+	outline: none;
+	border:none;
+	color: #fff;
+	font-size: 18px;
+}
+.retrieve-password{
+	width: 300px;
+	height: 42px;
+	/*border: 1px solid green;*/
+	margin:10px auto;
+
+}
+.retrieve-password a p{
+	float: left;
+}
+.retrieve-password a span{
+	float: right;
+	margin-top: 0;
+}
+.retrieve-password a{
+	color: inherit;
+}
+.retrieve-password a:hover{
+	color: green;
+}
+
+.other{
+	width: 300px;
+	height: 20px;
+	/*border: 1px solid red;*/
+	margin:0 auto;
+}
+.other-l{
+	width: 95px;
+	height: 10px;
+	border-bottom: 1px solid #ccc;
+	float: left;
+	/*margin-bottom: -5px;*/
+}
+.other-m{
+	width: 100px;
+	height: 20px;
+	float: left;
+	margin: 0 5px;
+	text-align: center;
+}
+.other-r{
+	width: 95px;
+	height: 10px;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+
+.way{
+	width: 300px;
+	height: 70px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+.way-l{
+	width: 100px;
+	height: 70px;
+	float: left;
+	font-size: 40px;
+	text-align: center;
+}
+
+/* 底部 */
+.bottom-box{
+	width:100%;
+
+}
+.bottom-copyright{
+	width: 1240px;
+	margin: 0 auto;
+	padding: 20px 0px;
+	text-align: center;
+}

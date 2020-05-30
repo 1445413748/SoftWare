@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360官方商城</title>
+	<link rel="stylesheet" href="<?= HC ?>index.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+
+
+	<?php $this->top(); ?>
+	<!-- 广告轮播图 -->
+	<div class="mod-index"> 
+
+		<div class="banner">
+			<div class="banner-img">
+			</div>
+		</div>
+
+		<div class="menu-main">
+			<ul>
+				<li><a href=""><i>&#xe630;</i>手机/配件</a></li>
+				<li><a href=""><i>&#xe631;</i>数码</a></li>
+				<li><a href=""><i>&#xe722;</i>电脑周边</a></li>
+				<li><a href=""><i>&#xe60b;</i>移动存储</a></li>
+				<li><a href=""><i>&#xe6bb;</i>汽车用品</a></li>
+				<li><a href=""><i>&#xe606;</i>家用电器</a></li>
+				<li><a href=""><i>&#xe668;</i>户外/运动</a></li>
+				<li><a href=""><i>&#xe7a7;</i>教育/文具</a></li>
+			</ul>
+		</div>
+
+		<div class="notice-main">
+			<div class="topnews">
+				<p>商城头条</p>
+				<ul>
+					<li><a href="">新品N7手机岩白色全新上市</a></li>
+					<li><a href="">官方商城微信公众号了解一下</a></li>
+					<li><a href="">360手机专场爆品推荐→</a></li>
+				</ul>
+			</div>
+			<div class="guide">
+				<ul>
+					<li><p>&#xe630;</p>
+					<a href="">手机</a>
+					</li>
+					<li><p>&#xe646;</p>
+
+					<a href="">智能</a>
+					</li>
+					<li><p>&#xe6bb;</p>
+
+					<a href="">汽车</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="adlistbox">
+			<a href=""><img src="<?= HI ?>ad0001.jpg" alt=""></a>
+				</div>
+		</div>
+	</div>
+
+	<!-- 商品展示 -->
+
+	<div class="goodsbox">
+
+		<div class="goodsbox-title">
+			<h2>明星商品</h2>
+		</div>
+
+		<div class="goodswrap">
+			<ul class="goodsmain">
+				<?php foreach ($tuijian as $k1 => $v1): ?>
+					<li>
+						<a href="index.php?c=goods&id=<?= $v1['id'] ?>">
+							<div class="goods-img">
+								<img src="<?= imgUrl($v1['icon'])?>" alt="">
+							</div>
+							<span class="goods-title">
+							<?= $v1['name']?></span>
+							<p class="goods-price">&yen; <?= $v1['price']?></p>
+						</a>
+					</li>
+				<?php endforeach ?>	
+			</ul>
+		</div>
+
+		<div class="goodsbox-title">
+			<h2>热销商品</h2>
+		</div>
+
+		<div class="goodswrap">
+			<div class="goodsleft">
+				<div class="top-imgbox">
+					<img src="<?= HI ?>ad0002.jpg" alt="">
+				</div>
+				<div class="bottom-imgbox">
+					<img src="<?= HI ?>ad0003.jpg" alt="">
+				</div>
+			</div>
+			<div class="goodsright">
+				<ul>
+					<?php foreach ($hotgoods as $k2 => $v2): ?>
+						<li>
+							<a href="index.php?c=goods&id=<?= $v1['id'] ?>">
+								<div class="goods-img">
+									<img src="<?= imgUrl($v2['icon'])?>">
+								</div>
+								<span class="goods-title">
+								<?= $v2['name']?> </span>
+								<p class="goods-price">&yen; <?= $v2['price']?></p>
+							</a>
+						</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<?php $this->footer(); ?>
+	
+	
+</body>
+</html>

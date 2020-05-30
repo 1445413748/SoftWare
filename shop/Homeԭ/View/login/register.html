@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360注册</title>
+	<link rel="stylesheet" href="<?= HC ?>register.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<!-- 顶部导航 -->
+	<div class="reg-top">
+		<div class="reg-top-main">
+			<div class="reg-top-l">
+				<div class="reg-top-img"><a href=""><img src="<?= HI ?>DL-logo.png" alt="">
+				</a>
+				</div>
+			</div>
+			<div class="reg-top-r">
+				<div class="reg-top-rl"><a href="">注册账号
+				</a>
+				</div>
+				<div class="reg-top-rr"><a href="index.php?c=login">登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 主体开始 -->
+	<div class="reg-middle">
+		<div  class="reg-middle-bg">
+			<div class="reg-box">
+				<div class="reg-title-box">
+					<div class="reg-title">
+					注册360账号
+					</div>
+				</div>
+				<div class="reg-box-main">
+					<div class="input-box">
+						<form method="post"action="index.php?c=login&m=doregister">
+						<p><input type="text" name="tel" placeholder="  请输入要注册的手机号">
+						</p>
+						<p><input type="password" name="pwd" placeholder="  大写字母开头6-15个字符" >
+						</p>
+						<p><input type="password" name="repwd" placeholder="  再次确认您的密码" >
+						</p>
+						<p>
+							<input type="text" placeholder="请输入验证码" name="code" class="iden" style="width:195px; display:inline-block;vertical-align: middle;">
+							<img src="../Public/code.php" onclick="this.src=this.src" style="vertical-align: middle; cursor: pointer;" >
+							<!-- <a href="">获取短信验证码</a> -->
+						</p>
+
+						<p><input type="submit" value="注册" class="submit">
+						</p>
+						</form>
+						<label>
+						<input type="checkbox" value="" style="width:15px; id="retainQuestion" checked "> 
+						<span>阅读并同意<a href="">360用户协议"
+						</a>和"<a href="">360用户隐私政策"
+						</a>
+						</span>
+						</label>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>
+	
+</body>
+</html>

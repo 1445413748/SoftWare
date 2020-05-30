@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="stylesheet" href="<?= HC ?>myoder.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<div class="user-body">
+		<div class="space"></div>
+		<div class="user-box">
+			<?php $this->orderleft(); ?>
+			<div class="user-main">
+				<div class="main-title">
+					<span>我的订单</span>
+				</div>
+				<div class="oder-list">
+					<ul class=order_type>
+						<li>
+							<a href="index.php?c=myorder&m=getALL">全部订单</a>
+						</li>
+						<li>
+							<a href="">待付款</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=unshipped">待发货</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=waitgoods">待收货</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=waiteva">待评价</a>
+						</li>
+						<li>
+							<a href="index.php?c=myorder&m=cancel">已取消</a>
+						</li>
+					</ul>
+					<table>
+						<thead>
+							<tr class="list-title">
+								<th class="col1">订单信息</th>
+								<th class="col2">订单金额</th>
+								<th class="col3">支付状态</th>
+								<th class="col4">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr class="list-oder-info">
+									<td colspan="4" style="height: 200px; text-align:center;font-size: 25px;color: #bbbbce;">暂无未付款订单</td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+				<ul class="page" style="margin-top: 100px">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

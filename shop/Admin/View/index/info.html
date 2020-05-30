@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统信息</title>
+	<link rel="stylesheet" href="<?= AC ?>index.css">
+</head>
+<body>
+	<div class="info-wrap">
+		<div class="info-main">
+			<div class="info-title">
+				<h3>后台统计</small></h3>
+			</div>
+			<div class="info-content">	
+				<div class="order-info">
+					<ul>
+						<a href="index.php?c=user">
+							<li class="order-info-user">
+								<i class="admin-user"></i>
+								<strong><?= $usersum ?></strong>
+								<small>用户人数</small>
+							</li>
+						</a>
+						<a href="index.php?c=order">
+							<li class="order-info-sale">
+								<i class="admin-sale"></i>
+								<strong><?= empty($amount)?'0':$amount ?></strong>
+								<small>交易金额</small>
+							</li>
+						</a>
+						<a href="index.php?c=order">
+							<li class="order-info-order">
+								<i class="admin-order"></i>
+								<strong><?= $order ?></strong>
+								<small>订单数</small>
+							</li>
+						</a>
+						<a href="index.php?c=goods">
+							<li class="order-info-goods">
+								<i class="admin-goods"></i>
+								<strong><?= $goods ?></strong>
+								<small>商品数量</small>
+							</li>
+						</a>
+						<a href="index.php?c=evaluate">
+							<li class="order-info-liuyan">
+								<i class="admin-liuyan"></i>
+								<strong><?= $eva ?></strong>
+								<small>评论处理</small>
+							</li>
+						</a>
+						
+					</ul>
+				</div>
+				<div class="sysinfo">
+					<div class="sysinfo-title">
+						<span>系统基本信息</span>
+					</div>
+					<div class="sysinfo-content">
+						<ul class="sys-info-list">
+		                    <li>
+		                        <label class="sys-lab">操作系统</label><span class="sys-info"><?= PHP_OS ?></span>
+		                    </li>
+		                   <li>
+		                        <label class="sys-lab">运行环境</label><span class="sys-info"><?= $_SERVER["SERVER_SOFTWARE"].phpversion()?></span>
+		                    </li>
+		                    <li>
+		                        <label class="sys-lab">当前版本</label><span class="sys-info">version-1.0</span>
+		                    </li>
+		                    <li>
+		                        <label class="sys-lab">上传附件限制</label><span class="sys-info">2M</span>
+		                    </li>
+		                    <li>
+		                        <label class="sys-lab">北京时间</label><span class="sys-info"><?= date('Y年m月d日 H点i分s秒') ?></span>
+		                    </li>
+	               		</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

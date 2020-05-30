@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>品牌管理</title>
+	<link rel="stylesheet" href="../css/order-goods.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>品牌管理</h3>
+			</div>
+			<div class="ibox-content">	
+				<form action="" class="form-main">
+					<div class="form-btn">
+						<a href="./add-brand.html" target="myIframe">+ 添加品牌</a>
+					</div>
+					<div class="form-search">
+						<input type="text"  class="form-control" value placeholder="输入品牌名称" >
+						<input type="submit" class="search-btn" value="搜索">
+					</div>
+				</form>
+				<table class="list-table">
+					<thead>
+						<tr>
+                            <th>ID</th>
+                            <th>品牌名称</th>
+                            <th>品牌图标</th>      
+                            <th>是否显示</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                       </tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1234</td>
+							<td>小米</td>
+							<td>
+								<img src="../images/people_fill.png" alt="" >
+							</td>
+							<td>
+								<a href="#" class="btn-icon"><img src="../images/jump_err.png" alt=""></a>
+							</td>
+							<td>99</td>
+							<td>
+								<div class="btn-group">
+									<a href="./edit-brand.html" class="btn-white">编辑</a>
+									<a href="" class="btn-white">删除</a>
+								</div>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

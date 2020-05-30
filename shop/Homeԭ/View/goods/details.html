@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360详情</title>
+	<link rel="stylesheet" href="<?= HC ?>details.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	
+	<?php $this->top(); ?>
+
+	<!-- 商品详情 -->
+	<div class="bigbox">
+		<div class="spacebox">
+			<!-- 手机详情图 -->
+			<div class="details-img">
+				<div class="details-imgbig">
+					<img src="<?= imgUrl($res['icon'])?>" alt="">
+				</div>				
+				<!-- 多方位小图 -->
+				<div class="img-b">
+					<?php foreach ($imgs as $k => $v): ?>
+						<div class="i-img">
+							<a href="">
+								<img src="<?= imgUrl($v['icon'])?>" alt="">
+							</a>
+						</div>
+					<?php endforeach ?>					
+				</div>
+				<div class="favorbox">收藏
+				</div>
+			</div>
+			
+			<!-- 手机详情标题 -->
+			<div class="describe-box">
+					<div class="describe">
+						<strong><?= $res['name'] ?>
+						</strong>
+						<p><?= $res['name'] ?>
+							<!-- <a href="">
+								<span>
+								</span>
+							</a> -->
+						</p>
+					</div>
+						
+						<!-- 价格版本选择 -->
+					<div class="choose">
+						<!-- 价格 -->
+						<div class="price">
+							<span>
+								<i>￥</i><?= $res['price']?>
+							</span>
+						</div>
+						<!-- 配送地址 -->
+						<div class="delive">
+							<span>配送至</span>
+							<div class="address">
+								<select name="address" style="border: 1px solid #ccc;margin-left: 28px;">
+									<option value="1">上海市  静安区
+									</option>
+									<option value="2">上海市  浦东区
+									</option>
+									<option value="3">上海市  徐汇区
+									</option>
+									<option value="4">上海市  宝山区
+									</option>
+									<option value="5">上海市  普陀区
+									</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="item">
+							<!-- 颜色 -->
+							<div class="cate">
+								<span>
+									颜 &nbsp;&nbsp; 色
+								</span>
+								<ul>
+									<li>
+										<a href="">			月岩白
+										</a>
+									</li>
+									
+									<li>
+										<a href="">			石墨黑
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 型号 -->
+							<div class="type">
+								<span>
+									型 &nbsp;&nbsp; 号
+								</span>
+								<ul>
+									<li>
+										<a href="">			裸机版
+										</a>
+									</li>
+									<li>
+										<a href="">			保护套装
+										</a>
+									</li>
+									<li>
+										<a href="">			保险套装
+										</a>
+									</li>
+									<li>
+										<a href="">			音乐套装
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 版本 -->
+							<div class="edition">
+								<span>
+									版 &nbsp;&nbsp; 本
+								</span>
+								<ul>
+									<li>
+										<a href="">			4+32G
+										</a>
+									</li>
+									<li>
+										<a href="">			6+64G
+										</a>
+									</li>
+									<li>
+										<a href="">			6+128G
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 库存 -->
+							<form action="index.php?" method="get">
+								<div class="csr">
+									<span>库 &nbsp;&nbsp; 存</span>
+									<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $res['stock']?> </span>
+								</div>
+									<input type="hidden" name="c" value="cart">
+									<input type="hidden" name="m" value="addgoods">
+									<input type="hidden" name="id" value="<?= $res['id']?>">
+									<!-- 数量 -->
+									<div class="num" style="margin-top: 10px;">
+										<span>
+											数 &nbsp;&nbsp; 量
+										</span>
+									
+										<i>
+											<a style="cursor:pointer"class="minus" id="count_add" value='jian' onclick="jian()">-
+											</a>
+
+											<input type="text" name="count" id="mynum" value="1" class="num-input" readonly>
+
+											<a style="cursor:pointer"class="add" id="count_sub" value='jia' onclick="jia()">+
+											</a>			
+										</i>
+									</div>
+
+									<div class="csr">
+										<span>联系客服</span>
+										<a href="" class="kf"></a>
+									</div>
+									<!-- 加入购物车 -->
+									<div class="button-box">
+										<div class=submit>
+											<i>
+												<img src="<?= HI ?>cart.png" alt="">
+											</i>
+											<input type="submit" value="加入购物车">
+										</div>
+									</div>
+							</form>
+						</div>
+					</div>
+			</div>
+		</div>
+		<!-- 看了又看,评论大盒子 -->
+		<div class="details">
+			<!-- 看了又看侧边栏 -->
+			<div class="look">
+				<h3>看了又看</h3>
+				<ul>
+					<li>
+						<a href="index.php?c=goods&id=24">
+							<img src="<?= HI ?>goods7.jpg" alt="">
+								<p class="price" style="width: 200px;margin-left: 45px;">￥1949.00</p>
+							<p>【碎屏险套装】360手机 N6 Pro 全网通 6GB+128GB 钛泽银色 移动联通电信4G手机 双卡双待 全面屏 游戏手机
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="index.php?c=goods&id=20">
+							<img src="<?= HI ?>goods8.jpg" alt="">
+								<p class="price" style="width: 200px;margin-left: 45px;">￥1599.00</p>
+							<p>360手机 N6 Pro 全网通 6GB+64GB 深海蓝色 移动联通电信4G手机 双卡双待 全面屏 游戏手机
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 评论大盒子 -->
+			<div  class="details-r">				
+				<div class="comment-title">
+					商品评价
+				</div>
+				<?php if (empty($eva)): ?>
+					<div class="comment" style="font-size:20px;text-align:center;height: 80px;line-height: 80px;background: #ffefef">
+						此商品暂无评论内容...
+					</div>
+				<?php else: ?>
+				<div class="comment" style="width: 950px; height:170px;border-bottom: 1px solid #f9f9f9;">
+					<div style="width: 210px;height: 170px;display: inline-block;float: left;">
+						<p class="zh" style="margin-top: 50px;margin-left: 50px;">综合满意度</p>
+						<p class="zh1" style="color: #fff">100%</p>
+					</div>
+					<div style="width: 350px;height: 170px;display: inline-block;float: left;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 10px">好评(100%)</span>
+								<div style="width:150px;height: 10px;background: #ee394b;display: inline-block"></div>
+							</li>
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 14px">中评(0.0%)</span>
+								<div style="width:150px;height: 10px;background: #ccc;display: inline-block"></div>
+							</li>
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 14px">差评(0.0%)</span>
+								<div style="width:150px;height: 10px;background: #ccc;display: inline-block"></div>
+							</li>
+						</ul>						
+					</div>
+					<div style="width: 150px;height: 170px;line-height:170px;text-align:center;display: inline-block;float: left;">
+						<span style="">商品综合评价</span>
+					</div>
+					<div style="width: 150px;height: 170px;display: inline-block;float: left;">
+						<img src="<?= HI?>jin.png" alt="" style="width: 200px;height: 125px;margin-top: 25px">
+					</div>
+				</div>
+				<div class="comment">
+				<?php foreach ($eva as $k => $v): ?>
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						<?= $v['name']?>
+						</div>
+					</div>
+					<p style="margin-top: 0px"><?= $v['content']?></p>
+					<b><?= $v['createtime']?></b>
+					<?php if (empty($v['reply'])): ?>
+						<p style="margin-top: 0px"></p>
+					<?php else: ?>
+						<p style="margin-top: 0px;color: skyblue;">店家回复: <?= $v['reply']?></p>
+						<b><?= $v['replytime']?></b>
+					<?php endif ?>
+				<?php endforeach ?>
+				<?php endif ?>					
+				</div>
+				<!-- <div class="comment">
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						zz1***2
+						</div>
+					</div>
+					<p>第一次充电有点发烫，后面就好些了。手机运行流畅，屏幕看起来也不错，暂时没有发现什么不足。
+					</p>
+					<b>2018-06-09 20:14:55</b>
+					
+				</div>
+
+				<div class="comment">
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						zz1***2
+						</div>
+					</div>
+					<p>第一次充电有点发烫，后面就好些了。手机运行流畅，屏幕看起来也不错，暂时没有发现什么不足。
+					</p>
+					<b>2018-06-09 20:14:55</b>
+					
+				</div>
+				<div class="comment">
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						zz1***2
+						</div>
+					</div>
+					<p>第一次充电有点发烫，后面就好些了。手机运行流畅，屏幕看起来也不错，暂时没有发现什么不足。
+					</p>
+					<b>2018-06-09 20:14:55</b>
+					
+				</div>
+
+				<div class="comment">
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						zz1***2
+						</div>
+					</div>
+					<p>第一次充电有点发烫，后面就好些了。手机运行流畅，屏幕看起来也不错，暂时没有发现什么不足。
+					</p>
+					<b>2018-06-09 20:14:55</b>
+					
+				</div>
+
+				<div class="comment">
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						zz1***2
+						</div>
+					</div>
+					<p>第一次充电有点发烫，后面就好些了。手机运行流畅，屏幕看起来也不错，暂时没有发现什么不足。
+					</p>
+					<b>2018-06-09 20:14:55</b>
+					
+				</div> -->
+
+	
+			</div>
+			
+		</div>
+	</div>
+	
+<!-- 底部 -->
+	<?php $this->footer(); ?>
+	
+	<script>
+	// 购买数量的表单id名
+    var mynum = document.getElementById('mynum');
+    // 购买数量-减
+    function jian(){
+        if(mynum.value > 0){
+            mynum.value = mynum.value - 1;
+        }
+
+        if(mynum.value < 1){
+            mynum.value = 1;
+        }
+    }
+    
+    // 购买数量-减
+    function jia(){
+         if ( mynum.value < <?= $res['stock'] ?>) {
+		    	 mynum.value = parseInt(mynum.value) + 1;
+		    }
+	       
+	        // mynum.value = mynum.value + 1;
+	  
+
+	    if ( mynum.value > <?= $res['stock'] ?>) {
+	    	mynum.value = <?= $res['stock'] ?>;
+	    }
+    }
+</script>
+
+</body>
+</html>

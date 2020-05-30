@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单详情</title>
+	<link rel="stylesheet" href="<?= AC ?>order-table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>订单详情</small></h3>
+			</div>
+			<div class="ibox-content">	
+					<div class="form-group">
+						<ul>
+							<li>
+								<span class="form-title">订单ID</span>
+								<span class="form-username"><?= $res['orderid'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">订单编号</span>
+								<span class="form-username"><?= $res['ordernum'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">商品名称</span>
+								<span class="form-username"><?= $res['goodsname'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">商品图片</span>
+								<em class="from-iconimg">
+									<div class="form-icon-img">
+										<img src="<?= imgUrl($res['icon']) ?>">
+									</div>
+								</em>
+							</li>
+							<li>
+								<span class="form-title">购买数量</span>
+								<span class="form-username"><?= $res['cartnum'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">总计金额</span>
+								<span class="form-username"><?= $res['totalprice'] ?></span>
+							</li>
+
+							<li>
+								<span class="form-title">收货人</span>
+								<span class="form-username"><?= $res['username'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">收货地址</span>
+								<span class="form-username"><?= $res['useraddress'] ?></span>
+							</li>
+							<li>
+								<span class="form-title">收货电话</span>
+								<span class="form-username"><?= $res['usertel'] ?></span>
+							</li>
+
+
+							<li>
+								<span class="form-title"></span>
+								<a href="index.php?c=order&m=editOrder&id=<?= $res['orderid'] ?>" class="form-back-btn-add"  name="">处理</a>
+								<a href="index.php?c=order" class="form-back-btn"  name="">返回</a>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

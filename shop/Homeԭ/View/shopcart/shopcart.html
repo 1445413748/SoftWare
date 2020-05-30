@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 头部 -->
+<head>
+	<meta charset="UTF-8">
+	<title>我的购物车</title>
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+	<link rel="stylesheet" href="<?= HC ?>shopcart.css">
+	<link rel="stylesheet" href="<?= HC ?>null-shopcart.css">
+</head>
+<body>
+	<div class="top-warp">
+		<!-- 360顶部灰色导航栏 -->
+		<div class="top-main">
+			<ul>
+				<li class="top-item-l"><a href="">帮助中心</a></li>
+				<li class="top-item-l"><a href="">收藏本站</a></li>
+				<li class="top-item-r"><a href=""><i></i>手机360商城</a></li>
+				<li class="top-item-r"><a href="index.php?c=myorder&m=getALL">我的订单</a></li>
+				<?php if ( empty($_SESSION['user']['id'] )): ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=register">注册</a></li>
+				<li class="top-item-r"><a href="index.php?c=login">登陆</a></li>
+				<?php else: ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=lgout">退出</a></li>
+				<li class="top-item-r"><a href="index.php?c=mycenter">个人中心</a></li>
+				<?php endif ?>
+			</ul>
+		</div>
+	</div>
+	<!-- 顶部logo -->
+	<div class="lgbox">
+		<div class="top-logo">
+			<div class="logo">
+				<a href="index.php?"><img src="<?= HI ?>logo.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- 购物车 -->
+	<div class="cart-box">
+		<?php if (empty($_SESSION['cart'])): ?>
+			<!-- 空购物车 -->
+			<div class="cart-box">
+				<div class="gcart">
+					<div class="hd">
+						<h3>我的购物车</h3>
+					</div>
+					<div class="bd">
+						<div class="null-cart">
+							<a href="index.php" title="立马去购物"></a>
+						</div>
+					</div>	
+				</div>
+			</div>
+		<?php else:?>
+		<!-- 有商品的购物车 -->
+		<div class="gcart">		
+			<div class="hd">
+				<h3>我的购物车</h3>
+			</div>
+			<div class="bd">
+				<table class="cartlist">
+					<!-- 表头名称 -->
+					<thead>
+						<tr>
+							<td class="col1">
+								<span><input type="checkbox">
+								</span>
+								<i>全选</i>
+							</td>
+							<td class="col2">商品
+							</td>
+							<td class="col3">单价
+							</td>
+							<td class="col4 center">数量	
+							</td>
+							<td class="col5" style="padding-left: 50px;">小计
+							</td>
+							<td class="col6">操作
+							</td>
+						</tr>
+					</thead>
+					<!-- 购物车主体 -->
+					<tbody>
+						<?php foreach ($_SESSION['cart'] as $k => $v): ?>
+							<tr>
+								<td class="col1">
+									<span><input type="checkbox">
+									</span>
+								</td>
+								<td class="col2">
+									<!-- 商品图 -->
+									<a href="index.php?c=goods&id=<?= $v['id'] ?>" class="goods">
+										<img src="<?= imgUrl($v['icon']) ?>" class="goods-img" style="width: 80px;height: 80px;">
+										<!-- 商品名称 -->
+										<span class="goods-name"><?= $v['name'] ?></span>
+									</a>
+									<!-- 商品颜色 -->
+									<div class="goods-des">
+										<span>颜色：月岩白
+										</span>
+										<br>
+										<span>型号：裸机版
+										</span>
+									</div>
+								</td>
+								<?php
+								@$total = $v['price'] * $v['count'];
+								@$sum += $total;
+								?>
+								<!-- 商品单价 -->
+								<td class="col3">
+									<strong>￥<?= $v['price'] ?></strong>
+								</td>
+								<!-- 商品数量 -->
+								<td class="col4">
+									<div class="number">
+										<a href="index.php?c=cart&m=sub&id=<?= $v['id'] ?>" class="sub">-</a>
+										<input type="text" value="<?= $v['count'] ?>" readonly>
+										<a href="index.php?c=cart&m=add&id=<?= $v['id'] ?>"class="add">+</a>
+									</div>
+								</td>
+								<!-- 价格小计 -->
+								<td class="col5">
+									<strong style="margin-left: 42px;">&yen; <?= $total ?>.00</strong>
+								</td>
+								<!-- 删除商品 -->
+								<td class="col6">
+									<a href="index.php?c=cart&m=delcart&id=<?= $v['id'] ?>">删除</a>
+								</td>
+							</tr>
+						<?php endforeach ?>
+					</tbody>					
+				</table>
+				<!-- 商品结算 -->
+				<div class="statistics" style="border: none;">
+					<a href="index.php?c=myorder&m=order" class="button">去结算</a>
+					<div class="price">
+						<p class="main">
+							<span>总价:</span>
+							<strong>￥<?= $sum ?>.00</strong>
+						</p>
+					</div>
+					<!-- <div class="goods-num">已选择 <strong>2</strong> 件商品
+					</div> -->
+				</div>
+				<?php endif ?>
+			</div>	
+		</div>
+	</div>
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

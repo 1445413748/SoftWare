@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单管理</title>
+	<link rel="stylesheet" href="<?= AC ?>order-table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>订单列表<small>( <?= $count ?> ) 个</small></h3>
+			</div>
+			<div class="ibox-content">	
+				
+				<form action="index.php" class="form-main" method="get">
+					<a href="View/order/pdf.php"><input class="form-submit-btn" style="text-align: center;" value="生成PDF" name=""></a>
+					<input type="hidden" name="c" value="order">
+					<div class="form-search">
+						<input type="text"  class="form-control"  name="search"  placeholder="订单编号或用户名称" >
+						<input type="submit" class="search-btn" value="搜索">
+					</div>
+				</form>
+				<table class="list-table">
+					<thead>
+						<tr>
+                            <th width="8%">ID</th>
+                            <th width="10%">用户昵称</th>
+                            <th width="15%">订单号</th>
+                            <th width="10%">订单金额</th>
+                            <th width="10%">支付方式</th>
+                            <th width="10%">订单状态</th>
+                            <th width="10%">支付状态</th>
+                            <th width="5%">已取消</th>
+                            <th width="20%">操作</th>
+
+                       </tr>
+					</thead>
+					<tbody>
+						<?php if (empty($res)): ?>
+							<tr>
+								<td colspan="9">查询结果为空</td>
+							</tr>
+						<?php else: ?>
+							<?php foreach ($res as $k => $v): ?>
+							<tr>
+								<td><?= $v['orderid']?></td>
+								<td><?= $v['username']?></td>
+								<td><?= $v['ordernum']?></td>
+								<td><?= $v['totalprice']?></td>
+								<td>在线支付</td>
+								<td>	
+									<?php if ($v['orderstatus']== 1): ?>
+										已发货
+									<?php elseif ($v['orderstatus']== 2): ?>
+										未发货
+									<?php elseif ($v['orderstatus']== 3): ?>
+										待评价
+									<?php else: ?>
+										已评价
+									<?php endif ?>
+								</td>
+								<td>已支付</td>
+								<td>否</td>
+								<td>
+									<div class="btn-group">
+										<a href="index.php?c=order&m=editOrder&id=<?= $v['orderid'] ?>" class="btn-white">处理</a>
+										<a href="index.php?c=order&m=lookOrder&id=<?=$v['orderid']?>" class="btn-white">查看</a>
+									</div>
+								</td>
+							</tr>
+							<?php endforeach ?>
+						<?php endif ?>
+					</tbody>
+				</table>
+				<div class="btn-limit-group">
+					<?= $page->showPage() ?>	
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

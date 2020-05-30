@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加收货地址</title>
+	<link rel="stylesheet" href="<?= HC ?>useradd.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<!-- 头部开始 -->
+	<?php $this->usertop(); ?>
+	<!-- 主体开始 -->
+	<div class="bd">
+		<div class="bd-s">
+			<!-- 左侧菜单 -->
+			<?= $this->userleft(); ?>
+			<!-- 右侧资料主体 -->
+			<div class="data-bd">
+				<!-- 个人资料 -->
+				<div class="user-data">
+					<div class="update-tit">
+						<span>添加收货地址</span>
+					</div>
+					<form action="index.php?c=mycenter&m=doeditaddress" method="post">
+						<ul>
+							<input type="hidden" name="addressid" value="<?= $res['addressid'] ?>">
+							<input type="hidden" name="userid" value="<?= $_SESSION['user']['id']?>">
+							<li>
+								<p><label>收货人姓名</label></p>
+								<input type="text" class="addaddress" name="username" maxlength="20" value="<?= $res['username']?>">
+							</li>
+							<li>
+								<p><label>联系电话</label></p>
+								<input type="text" class="addaddress" name="usertel" maxlength="11" value="<?= $res['usertel'] ?>">
+							</li>
+							<li>
+								<p><label>邮政编码</label></p>
+								<input type="text" class="addaddress" name="zipcode" maxlength="6" value="<?= $res['zipcode']?>">
+							</li>
+							<li>
+								<p><label>收货地址</label></p>
+								<input type="text" class="address" name="useraddress" maxlength="50" value="<?= $res['useraddress']?>">
+							</li>
+						</ul>
+						<div class="sub-box">
+							<input type="submit" name="" value="保存修改">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>	
+</body>
+</html>

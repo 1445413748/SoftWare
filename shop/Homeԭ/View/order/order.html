@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+	<link rel="stylesheet" href="<?= HC ?>Oder.css">
+</head>
+<body>
+	<div class="top-warp">
+		<!-- 360顶部灰色导航栏 -->
+		<div class="top-main">
+			<ul>
+				<li class="top-item-l"><a href="">帮助中心</a></li>
+				<li class="top-item-l"><a href="">收藏本站</a></li>
+				<li class="top-item-r"><a href=""><i></i>手机360商城</a></li>
+				<li class="top-item-r"><a href="index.php?c=myorder&m=getALL">我的订单</a></li>
+				<?php if ( empty($_SESSION['user']['id'] )): ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=register">注册</a></li>
+				<li class="top-item-r"><a href="index.php?c=login">登陆</a></li>
+				<?php else: ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=lgout">退出</a></li>
+				<li class="top-item-r"><a href="index.php?c=mycenter"><?= $_SESSION['user']['tel'] ?></a></li>
+				<?php endif ?>
+			</ul>
+		</div>
+	</div>
+	<!-- 顶部logo -->
+	<div class="lgbox">
+		<div class="top-logo">
+			<div class="logo">
+				<a href="index.php?"><img src="<?= HI ?>	logo.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- 我的订单 -->
+	<div class="oder-bigbox">
+	<?php if (empty($_SESSION['cart'])): ?>
+			<div style="height: 200px;line-height:200px;font-size:20px;text-align:center;background: #f2f2f2">暂无商品请先去下单...</div>				
+	<?php else: ?>
+		<div class="oder-box">
+			<!-- 收货地址 -->
+			<div class="shop-address">
+				<div class="hd">
+					<h3>收货地址</h3>
+				</div>
+				<div class="bd">
+					<form action="index.php?c=myorder" method="post">
+					<?php if (empty($res)): ?>
+						<div class="consignee">
+								暂无默认收货地址,请先添加地址
+						</div>
+
+						<!-- 添加收货地址 -->
+						<a href="index.php?c=myorder&m=orderaddress" class="btn-add"></a>
+					<?php else: ?>
+						<div class="consignee">
+							<span class="edit">
+								<a href="index.php?c=mycenter&m=useraddress" style="color: green;">如需更改请至地址管理页</a>
+							</span>
+							<input type="radio" class="input-radio" checked="checked">
+							<label> 
+								<input type="hidden" name="userid" value="<?= $_SESSION['user']['id']?>">
+								<input type="hidden" name="username" value="<?= $res['username']?>">
+								<input type="hidden" name="usertel" value="<?= $res['usertel']?>">
+								<input type="hidden" name="useraddress" value="<?= $res['useraddress']?>">
+								<span name="username"><?= $res['username']?></span>
+							    <span name="usertel"><?= $res['usertel']?></span> 
+							    <span name="useraddress"><?= $res['useraddress']?></span>
+							</label>
+						</div>
+					<?php endif ?>
+						<!-- 支付方式 -->
+						<div class="pay">
+							<div class="hd">
+								<h3>支付方式</h3>
+							</div>
+							<div class="bd">
+								<input type="radio" class="input-radio" checked="checked">
+								<label for=""> 在线支付
+								</label>
+							</div>
+						</div>
+						<!-- 配送方式 -->
+						<div class="mall-modw">
+							<div class="hd">
+								<h3>配送方式</h3>
+								<span> 由京东负责配送和售后
+								</span>
+							</div>
+							<div class="bd">
+								<input type="radio" class="input-radio" checked="checked">
+								<label for=""> 京东快递
+								</label>
+							</div>
+						</div>
+						<!-- 发票信息 -->
+						<div class="mall-modw">
+							<div class="hd">
+								<h3>发票信息</h3>
+								<span> 由京东负责开具发票
+								</span>
+							</div>
+							<div class="bd">
+								<b>电子发票</b>
+								<b>个人</b>
+								<b>商品明细</b>
+							</div>
+						</div>
+						<!-- 商品清单 -->
+						<div class="order-list">
+							<div class="hd">
+								<h3>商品清单</h3>
+							</div>
+							<div class="bd">
+								<div class="goodlist">
+									<div class="title">
+										<div class=t1>商品名称</div>
+										<div class="t2">单价</div>
+										<div class="t3">数量</div>
+										<div class="t4">合计</div>
+									</div>
+									<!-- 订单商品详情 -->
+									
+										
+									<?php foreach ($_SESSION['cart'] as $k => $v): ?>
+									<div class="goods-b">
+										<div class="goods-m">
+											<!-- 订单图片+描述 -->
+											<div class="l1">
+												<a>
+													<img src="<?= imgUrl($v['icon']) ?>" name="orderimg" alt="">
+													<span name="ordername"><?= $v['name'] ?></span>
+												</a>
+											</div>
+											<?php
+												@$total = $v['price'] * $v['count'];
+												@$sum += $total;
+												@$num += $v['count'];
+											?>
+											<!-- 订单价格 -->
+											<div class="l2">
+												<span name="oneprice">&yen; <?= $v['price'] ?>
+												</span>
+											</div>
+											<!-- 订单数量 -->
+											<div class="l3">
+												<input type="hidden" value="<?= $v['count']?>">
+												<span name="cartnum"> X <?= $v['count'] ?>
+												</span>	
+											</div>
+											<!-- 订单合计 -->
+											<div class="l4">
+												<!-- <input type="hidden" name="totalprice" value="<?= $total?>.00"> -->
+												<span>&yen; <?= $total ?> . 00
+												</span>
+											</div>
+										</div>
+									</div>
+									<?php endforeach ?>
+								</div>
+							</div>
+						</div>					
+						<!-- 购物合计 -->
+						<div class="total">
+							<table class="total-table">
+								<tbody>
+									<tr>
+										<td class="tdtitle">商品件数</td>
+										<td>:</td>
+										<td class=number><?= $num ?>件</td>	
+									</tr>
+									<tr>
+										<td class="tdtitle">金额合计</td>
+										<td>:</td>
+										<td class=number ><?= $sum ?>.00元</td>	
+									</tr>
+									<tr>
+										<td class="tdtitle">优惠抵扣</td>
+										<td>:</td>
+										<td class=number>0.00元</td>	
+									</tr>
+									<tr>
+										<td class="tdtitle">运费</td>
+										<td>:</td>
+										<td class=number>0.00元</td>	
+									</tr>
+									<tr>
+										<td class="tdtitle1">应付总额</td>
+										<td>:</td>
+										<td class=number1>&yen;<?= $sum ?>.00元</td>	
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>
+											<div class="sub-btn">
+												<a>
+													<input type="submit" value="提交订单">
+												</a>
+											</div>
+								
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+				</div>
+			</div>				
+		</div>
+	<?php endif ?>
+	</div>
+	<!-- 底部 -->
+	<?php $this->footer(); ?>	
+</body>
+</html>

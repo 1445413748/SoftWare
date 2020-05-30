@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+	<link rel="stylesheet" href="<?= HC ?>orderaddress.css">
+</head>
+<body>
+	<div class="top-warp">
+		<!-- 360顶部灰色导航栏 -->
+		<div class="top-main">
+			<ul>
+				<li class="top-item-l"><a href="">帮助中心</a></li>
+				<li class="top-item-l"><a href="">收藏本站</a></li>
+				<li class="top-item-r"><a href=""><i></i>手机360商城</a></li>
+				<li class="top-item-r"><a href="index.php?c=myorder&m=getALL">我的订单</a></li>
+				<?php if ( empty($_SESSION['user']['id'] )): ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=register">注册</a></li>
+				<li class="top-item-r"><a href="index.php?c=login">登陆</a></li>
+				<?php else: ?>
+				<li class="top-item-r"><a href="index.php?c=login&m=lgout">退出</a></li>
+				<li class="top-item-r"><a href="index.php?c=mycenter"><?= $_SESSION['user']['tel'] ?></a></li>
+				<?php endif ?>
+			</ul>
+		</div>
+	</div>
+	<!-- 顶部logo -->
+	<div class="lgbox">
+		<div class="top-logo">
+			<div class="logo">
+				<a href=""><img src="<?= HI ?>	logo.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- 我的订单 -->
+	<div class="oder-bigbox">
+		<div class="oder-box">
+			<!-- 收货地址 -->
+			<div class="shop-address">
+				<div class="hd">
+					<h3>收货地址</h3>
+				</div>
+				<div class="bd">
+					<!-- <div class="consignee">
+						<span class="edit">
+							<a href="">编辑</a>
+						</span>
+						<input type="radio" class="input-radio" checked="checked">
+						<label for=""> 张旭,上海市静安区龙软大厦4楼兄弟连,132****8205
+						</label>
+					</div> -->
+					<!-- 添加收货地址 -->
+					<!-- <div class="btn-add">
+						<a href="" class="add-btn">
+						</a>
+					</div> -->
+					<div class="add-address-box">
+						<input type="hidden">
+						<form action="index.php?c=myorder&m=doaddress" method="post">
+							<!-- 收货人姓名 -->
+							<input type="hidden" name="userid" value="<?= $_SESSION['user']['id']?>">
+							<div class="add-row">
+								<label for="" class="add-title">
+									收货人姓名
+								</label>
+								<input type="text"class="add-name" name="username" placeholder="收货人姓名">
+							</div>
+							<!-- 收货人地址 -->
+							<div class="add-row-t-10">
+								<label for="" class="add-title">
+									收货地址
+								</label>
+								<select class="consignee-add-select" name="" id="">
+									<option value="0" selected="">请选择</option>
+									<option value="1">北京</option>
+									<option value="2">上海</option>
+									<option value="3">天津</option>
+									<option value="4">重庆</option>
+									<option value="5">安徽</option>
+								</select>
+								<select class="consignee-add-select" name="" id="">
+									<option value="0" selected="">请选择</option>
+									<option value="1">北京</option>
+									<option value="2">上海</option>
+									<option value="3">天津</option>
+									<option value="4">重庆</option>
+									<option value="5">合肥</option>
+								</select>
+								<input class="consignee-add-address" type="text" name="useraddress" placeholder="路名或街道地址,门牌号" maxlength="50">
+							</div>
+							<!-- 邮政编码 -->
+							<div class="add-row-t-10">
+								<label for="" class="add-title">
+									邮政编码
+								</label>
+								<input class="add-postal" type="text" name="zipcode" placeholder="6位邮政编码" maxlength="6">
+							</div>
+							<!-- 收货人手机号 -->
+							<div class="add-row-t-10">
+								<label for="" class="add-title">
+										手机号码
+								</label>
+								<input class="add-tel" type="text" name="usertel" placeholder="11位手机号码" maxlength="11">
+							</div>
+							<!-- 保存 -->
+							<div class="add-row-t-10">
+								<p class="m-t-20">
+									<input type="submit" class="btn-green" value="提交">
+									<a href="index.php?c=myorder&m=order" class=btn-gray>
+										取消
+									</a>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<div class="mod-footer">
+		<div class="foot-banner">
+			<div class="foot-item">
+				<div class="icon7"><i>&#xe691;</i>
+				&nbsp;7天无理由退货
+				</div>
+				<div class="icon7"><i>&#xe636;</i>
+				&nbsp;质量问题15天包换
+				</div>
+				<div class="icon7"><i>&#xe600;</i>
+				&nbsp;满99元包邮
+				</div>
+			</div>
+		</div>
+		<div class="foot-help">
+			<div class="foot-help-main">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd><a href="">用户登录与密码找回</a></dd>
+					<dd><a href="">用户注册协议</a></dd>
+					<dd><a href="">购买指南</a></dd>
+					<dd><a href="">支付方式</a></dd>
+					<dd><a href="">赠送与说明</a></dd>
+					<dd><a href="">用户注销</a></dd>
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+					<dd><a href="">7日无理由退货</a></dd>
+					<dd><a href="">质量问题15日内换货</a></dd>
+					<dd><a href="">保修条款</a></dd>
+					<dd><a href="">售后服务运费规则</a></dd>
+				</dl>
+				<dl>
+					<dt>联系我们</dt>
+					<dd><span>400-6822-360</span></dd>
+					<dd>周一至周五9:00-18:00</dd>
+					<dd><span>400-0111-366 <i>（手机类产品）</i></span></dd>
+					<dd>周一至周日 9:00-21:00</dd>
+					<dd>（仅收市话费）</dd>
+				</dl>
+				<dl>
+					<dd><img src="<?= HI ?>ewm.png"></dd>
+				</dl>
+			</div>
+
+		</div>
+		<div class="copyright">
+			<p>360商城©2013-2018 360公司版权所有 京ICP备17017089号 京公网安备11000002000006号</p>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商城</title>
+	<link rel="stylesheet" href="<?= HC ?>index.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+
+
+	<?php $this->top(); ?>
+	<div class="mod-index"> 
+
+		<div class="banner">
+			<div class="banner-img">
+			</div>
+		</div>
+
+		<div class="menu-main">
+		</div>
+
+	</div>
+
+	<!-- 商品展示 -->
+
+	<div class="goodsbox">
+
+		<div class="goodsbox-title">
+			<h2>打折商品</h2>
+		</div>
+
+		<div class="goodswrap">
+			<ul class="goodsmain">
+				<?php foreach ($tuijian as $k1 => $v1): ?>
+					<li>
+						<a href="index.php?c=goods&id=<?= $v1['id'] ?>">
+							<div class="goods-img">
+								<img src="<?= imgUrl($v1['icon'])?>" alt="">
+							</div>
+							<span class="goods-title">
+							<?= $v1['name']?></span>
+							<p class="goods-price">&yen; <?= $v1['price']?></p>
+						</a>
+					</li>
+				<?php endforeach ?>	
+			</ul>
+		</div>
+
+	<?php $this->footer(); ?>
+	
+	
+</body>
+</html>

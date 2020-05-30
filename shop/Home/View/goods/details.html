@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" href="<?= HC ?>details.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	
+	<?php $this->top(); ?>
+
+	<!-- 商品详情 -->
+	<div class="bigbox">
+		<div class="spacebox">
+			<div class="details-img">
+				<div class="details-imgbig">
+					<img src="<?= imgUrl($res['icon'])?>" alt="">
+				</div>				
+				<div class="img-b">
+					<?php foreach ($imgs as $k => $v): ?>
+						<div class="i-img">
+							<a href="">
+								<img src="<?= imgUrl($v['icon'])?>" alt="">
+							</a>
+						</div>
+					<?php endforeach ?>					
+				</div>
+				<div class="favorbox"> 
+				</div>
+			
+			</div>
+			
+			<div class="describe-box">
+					<div class="describe">
+						<strong><?= $res['name'] ?>
+						</strong>
+						<p><?= $res['name'] ?>
+						</p>
+					</div>
+						
+					<div class="choose">
+						<div class="price">
+							<span>
+								<i>单价￥</i><?= $res['price']?>
+							</span>
+						</div>
+						<div class="delive">
+							<span>配送至</span>
+							<div class="address">
+								<select name="address" style="border: 1px solid #ccc;margin-left: 28px;">
+									<option value="1">广东省  广州市
+									</option>
+									<option value="2">广东省  深圳市
+									</option>
+									<option value="3">广东省  惠州市
+									</option>
+									<option value="4">广东省  佛山市
+									</option>
+									<option value="5">广东省  珠海市
+									</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="cate">
+								<span>
+									颜 &nbsp;&nbsp; 色
+								</span>
+							<div class="address">
+								<select name="address" style="border: 1px solid #ccc;margin-left: 10px;">
+									<option value="1">石墨黑
+									</option>
+									<option value="2">月岩白
+									</option>	
+									<option value="3">中国红
+									</option>
+									<option value="4">天空灰
+									</option>
+								</select>
+							</div>
+							<div class="cate">
+								<span>
+									套 &nbsp;&nbsp; 餐
+								</span>
+							<div class="address">
+								<select name="address" style="border: 1px solid #ccc;margin-left: 10px;">
+									<option value="1">裸机版
+									</option>
+									<option value="2">套餐1
+									</option>	
+									<option value="3">套餐2
+									</option>
+									<option value="4">套餐3
+									</option>
+								</select>
+							</div>
+							</div>
+							<div class="edition">
+								<span>
+									内 &nbsp;&nbsp; 存
+								</span>
+							<div class="address">
+								<select name="address" style="border: 1px solid #ccc;margin-left: 10px;">
+									<option value="1">6G+128G
+									</option>
+									<option value="2">8G+256G
+									</option>	
+									<option value="3">16G+512G
+									</option>
+									<option value="4">32G+1TB
+									</option>
+								</select>
+							</div>
+							</div>
+							<form action="index.php?" method="get">
+								<div class="csr">
+									<span>库 &nbsp;&nbsp; 存</span>
+									<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $res['stock']?> 件</span>
+								</div>
+									<input type="hidden" name="c" value="cart">
+									<input type="hidden" name="m" value="addgoods">
+									<input type="hidden" name="id" value="<?= $res['id']?>">
+									<div class="num" style="margin-top: 10px;">
+										<span>
+											数 &nbsp;&nbsp; 量
+										</span>
+									
+										<i>
+											<a style="cursor:pointer"class="minus" id="count_add" value='jian' onclick="jian()">-
+											</a>
+
+											<input type="text" name="count" id="mynum" value="1" class="num-input" readonly>
+
+											<a style="cursor:pointer"class="add" id="count_sub" value='jia' onclick="jia()">+
+											</a>			
+										</i>
+									</div>
+
+									<div class="button-box">
+										<div class=submit>
+											<i>
+												<img src="<?= HI ?>cart.png" alt="">
+											</i>
+											<input type="submit" value="加入购物车">
+										</div>
+									</div>
+							</form>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="details">
+			<div class="look">
+				<h3>看了又看</h3>
+				<ul>
+					<li>
+						<a href="index.php?c=goods&id=44">
+							<img src="<?= HI ?>goods1.jpg" alt="">
+								<p class="price" style="width: 200px;margin-left: 45px;">￥1666.00</p>
+							<p>华为手机
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="index.php?c=goods&id=48">
+							<img src="<?= HI ?>goods7.jpg" alt="">
+								<p class="price" style="width: 200px;margin-left: 45px;">￥1688.00</p>
+							<p>华为手机
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div  class="details-r">				
+				<div class="comment-title">
+					商品评价
+				</div>
+				<?php if (empty($eva)): ?>
+					<div class="comment" style="font-size:20px;text-align:center;height: 450px;line-height: 80px;background: #ffefef">
+						此商品暂无评论内容...
+					</div>
+				<?php else: ?>
+				<div class="comment" style="width: 950px; height:170px;border-bottom: 1px solid #f9f9f9;">
+					<div style="width: 210px;height: 170px;display: inline-block;float: left;">
+						<p class="zh" style="margin-top: 50px;margin-left: 50px;">综合满意度</p>
+						<p class="zh1" style="color: #fff">100%</p>
+					</div>
+					<div style="width: 350px;height: 170px;display: inline-block;float: left;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 10px">好评(100%)</span>
+								<div style="width:150px;height: 10px;background: #ee394b;display: inline-block"></div>
+							</li>
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 14px">中评(0.0%)</span>
+								<div style="width:150px;height: 10px;background: #ccc;display: inline-block"></div>
+							</li>
+							<li style="margin-top:20px;margin-left: 40px;">
+								<span style="margin-right: 14px">差评(0.0%)</span>
+								<div style="width:150px;height: 10px;background: #ccc;display: inline-block"></div>
+							</li>
+						</ul>						
+					</div>
+					<div style="width: 150px;height: 170px;line-height:170px;text-align:center;display: inline-block;float: left;">
+						<span style="">商品综合评价</span>
+					</div>
+					<div style="width: 150px;height: 170px;display: inline-block;float: left;">
+						<img src="<?= HI?>jin.png" alt="" style="width: 200px;height: 125px;margin-top: 25px">
+					</div>
+				</div>
+				<div class="comment">
+				<?php foreach ($eva as $k => $v): ?>
+					<div class="comment-top">
+						<div class="stars">
+						<img src="<?= HI ?>five-stars.png" alt="">
+						</div>
+						<div class="name">
+						<?= $v['name']?>
+						</div>
+					</div>
+					<p style="margin-top: 0px"><?= $v['content']?></p>
+					<b><?= $v['createtime']?></b>
+					<?php if (empty($v['reply'])): ?>
+						<p style="margin-top: 0px"></p>
+					<?php else: ?>
+						<p style="margin-top: 0px;color: skyblue;">店家回复: <?= $v['reply']?></p>
+						<b><?= $v['replytime']?></b>
+					<?php endif ?>
+				<?php endforeach ?>
+				<?php endif ?>					
+				</div>
+
+	
+			</div>
+			
+		</div>
+	</div>
+	
+<!-- 底部 -->
+	<?php $this->footer(); ?>
+	
+	<script>
+    var mynum = document.getElementById('mynum');
+    function jian(){
+        if(mynum.value > 0){
+            mynum.value = mynum.value - 1;
+        }
+
+        if(mynum.value < 1){
+            mynum.value = 1;
+        }
+    }
+    
+    function jia(){
+         if ( mynum.value < <?= $res['stock'] ?>) {
+		    	 mynum.value = parseInt(mynum.value) + 1;
+		    }
+	       
+	  
+
+	    if ( mynum.value > <?= $res['stock'] ?>) {
+	    	mynum.value = <?= $res['stock'] ?>;
+	    }
+    }
+</script>
+
+</body>
+</html>

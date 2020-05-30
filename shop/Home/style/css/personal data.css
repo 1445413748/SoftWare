@@ -1,0 +1,213 @@
+/* 初始化 */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}   
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}   
+a{color:#2d374b;text-decoration:none;font-style: normal}   
+a:hover{color:#cd0200;}   
+em{font-style:normal}   
+li{list-style:none}   
+img{border:0;vertical-align:middle}   
+table{border-collapse:collapse;border-spacing:0}   
+p{word-wrap:break-word}  
+strong{font-weight:normal}
+
+
+
+@font-face{
+	font-family: 'TB';
+	src: url('../iconfont/iconfont.ttf');
+}
+
+body{
+	font-family: 'TB','微软雅黑';
+	min-width: 1240px;
+}
+
+.hd{
+	width: 100%;
+}
+
+.uc-header{
+	margin: 0 auto;
+	height: 75px;
+    margin: 0 auto;
+    width: 960px;
+}
+.uc-header .logo{
+	float: left;
+	font-size: 	100%;
+}
+.uc-header .logo a{
+	background: url(../images/uc-logo.png) no-repeat;
+    display: block;
+    height: 45px;
+    margin-top: 16px;
+    width: 366px;
+}
+.uc-header .nav-login{
+    float: right;
+    padding-top: 40px;
+}
+.uc-header .nav-login ul{
+	float: right;
+}
+.uc-header .nav-login ul li{
+	float: right;
+}
+
+.uc-header .nav-login ul li :hover{
+	color:#1eb009;
+}
+
+/* 头部导航 */
+.uc-nav{
+	background: #59ce2a;
+    height: 45px;
+    width: 100%;
+}
+.uc-nav .nav{
+	margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+.nav .main-nav{
+	float: left;
+}
+.nav .main-nav li{
+	float: left;
+}
+.nav .main-nav li a{
+	display: block;
+	color:#fff;
+    font: 18px/45px "Microsoft Yahei";
+    padding: 0 25px;
+    line-height: 43px;
+    padding: 0 24px;
+}
+.nav .main-nav li :hover{
+	background: #33b818;
+}
+/* 主体开始 */
+.bd{
+	margin-top: 20px;
+	width: 100%;
+	margin-bottom: 50px;
+}
+.change-box{
+	width: 720px;
+	min-height: 650px;
+	margin: 0 auto;
+	padding: 20px 30px;
+	border: 1px solid #ccc;
+}
+.change-tit{
+	width: 658px;
+	height: 36px;
+	background: #52d250;
+	padding-left: 10px;
+}
+.change-tit h2{
+	font-weight: normal;
+	color: #fff;
+	font-size: 24px;
+}
+/* 修改内容表单开始 */
+.form-box{
+	width: 658px;
+	margin-top: 20px;
+}
+
+.form-box form{
+	display: block;
+}
+.form-box form li{
+	margin-top: 20px;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.form-box form li input{
+	outline: none;
+    padding: 2px 3px;
+   
+}
+
+/* 头像修改 */
+.icon-cg{
+	padding-bottom: 50px;
+	border-bottom: 1px solid #ccc;
+}
+.icon-cg p{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.icon-cg input{
+	outline: none;
+}
+.fm-item .l1{
+	border-radius: 3px;
+	border: 1px #c8c8c8 solid;
+    padding: 2px 3px;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+}
+.fm-item .l1:focus{
+	border-color:green;
+}
+
+.fm-item select{
+	width: 200px;
+	height: 35px;
+	outline: none;
+	border: 1px #c8c8c8 solid;
+	border-radius: 3px;
+} 
+
+.fm-item .l2{
+	width: 250px;	
+	height: 50px;	
+	border: 1px #c8c8c8 solid;
+	border-radius: 3px;
+	padding: 2px 3px;
+    font-size: 14px;
+    line-height: 28px;
+}
+.fm-item .l2:focus{
+	border-color:green;
+}
+.form-box .btn{
+	width: 658px;	
+	margin-top: 50px;
+	padding-left: 65px;
+}
+.form-box .btn button{
+	background: #71c62b;
+	color: #fff;
+	font-size: 20px;
+    border: 1px solid #67b227;
+    border-radius: 2px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 30px;
+    cursor: pointer;
+    outline: none;
+}
+.form-box .btn button:hover{
+	background: #67b227;
+}
+
+
+.bottom-box{
+	width:100%;
+
+}
+.bottom-copyright{
+	width: 1240px;
+	margin: 0 auto;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+
+
+

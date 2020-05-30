@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改密码</title>
+	<link rel="stylesheet" href="<?= HC ?>pwd.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->usertop(); ?>
+	<div class="bd">
+		<div class="bd-s">
+			<?php $this->userleft(); ?>
+			<div class="data-bd">
+				<div class="pwd-box">
+					<div class="title">
+						<strong>修改密码</strong>
+					</div>
+					<div class="pwd">
+						<form action="index.php?c=mycenter&m=uppwd" method="post">
+							<ul>
+								<li>
+									<input type="hidden" name="id" value="<?= $res['id'] ?>">
+									<span>请输入原密码</span>
+									<input type="password" name="password" class="ipt" 			placeholder="6-15位  	以字母数字组合">
+								</li>
+								<li>
+									<span>请输入新密码</span>
+									<input type="password" name="pwd" class="ipt" 			placeholder="6-15位   以字母数字组合">
+								</li>
+								<li>
+									<span>再次确认密码</span>
+									<input type="password" name="repwd" class="ipt" 			placeholder="6-15位  	以字母数字组合">
+								</li>
+							</ul>
+							<span>
+								<input type="submit" value="确认修改">
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+<div style="padding-top:5%" align="center">@2020 1846小组 ICP备案号：<a href="http://beian.miit.gov.cn/" ;="" target="_blank">粤ICP备20027720号</a></div>
+		</div>
+	</div>	
+</body>
+</html>

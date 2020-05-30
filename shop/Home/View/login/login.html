@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆</title>
+	<link rel="stylesheet" href="<?= HC ?>login.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<div class="login-box">
+		<div class="top-login">
+			</a></div>
+		</div>
+	</div>
+	<div class="login-bgbox">
+		<div class="login-bg">
+			<div class="login-main">
+				<div class="panel">
+					<div class="panel-title">
+						<ul>
+							<li>
+							<a href=""><span>账号登陆</span></a>
+							</li>
+							<li>
+							<a href="index.php?c=login&m=register"><i>立即注册</i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<form method="post" action="index.php?c=login&m=dologin">
+					<input type="text" class="user-name" name="tel" placeholder="手机号">
+					<input type="password" class="password" name="pwd" placeholder="请输入密码" style="margin-bottom: 0px;">
+					<input type="text" class="password" name="code" placeholder="请输入验证码" style="width: 193px;display: inline-block;margin-left: 26px;vertical-align: middle;">
+					<img src="../Public/code.php" onclick="this.src=this.src" style="vertical-align: middle;height: 45px;cursor: pointer;" >
+					<input type="submit" value="登陆" class="submit" style="cursor: pointer">
+				</form>
+				<div class="retrieve-password">
+					<a href="http://reseq.cn/shop/Home/index.php?c=login&m=register"><p>快速注册</p></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+<div style="padding-top:5%" align="center">@2020 1846小组 ICP备案号：<a href="http://beian.miit.gov.cn/" ;="" target="_blank">粤ICP备20027720号</a></div>
+		</div>
+	</div>	
+
+</body>
+</html>

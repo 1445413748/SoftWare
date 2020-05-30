@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加地址</title>
+	<link rel="stylesheet" href="<?= HC ?>add-address.css">
+	<link rel="icon" href="<?php HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->top(); ?>
+	<div class="user-body">
+		<div class="space"></div>
+		<div class="user-box">
+			<?php $this->orderleft(); ?>
+			<div class="user-main">
+				<div class="addr-box">
+					<h2>收货地址</h2>
+					<div class="addr-main">
+						<div class="add-address-box">
+							<input type="hidden">
+							<form action="">
+								<!-- 收货人姓名 -->
+								<div class="add-row">
+									<label for="" class="add-title">
+										收货人姓名
+									</label>
+									<input type="text"class="add-name" placeholder="收货人姓名">
+								</div>
+								<div class="add-row-t-10">
+									<label for="" class="add-title">
+										收货地址
+									</label>
+									<select class="consignee-add-select" name="" id="">
+										<option value="0" selected="">请选择</option>
+										<option value="1">北京</option>
+										<option value="2">上海</option>
+										<option value="3">广东</option>
+										<option value="4">四川</option>
+										<option value="5">安徽</option>
+									</select>
+									<select class="consignee-add-select" name="" id="">
+										<option value="0" selected="">请选择</option>
+										<option value="1">北京</option>
+										<option value="2">上海</option>
+										<option value="3">天津</option>
+										<option value="4">重庆</option>
+										<option value="5">合肥</option>
+									</select>
+									<input class="consignee-add-address" type="text" placeholder="路名或街道地址,门牌号">
+								</div>
+								<!-- 邮政编码 -->
+								<div class="add-row-t-10">
+									<label for="" class="add-title">
+										邮政编码
+									</label>
+									<input class="add-postal" type="text" placeholder="6位邮政编码">
+								</div>
+								<!-- 收货人手机号 -->
+								<div class="add-row-t-10">
+									<label for="" class="add-title">
+										手机号码
+									</label>
+									<input class="add-tel" type="text" placeholder="11位手机号码">
+								</div>
+								<!-- 保存 -->
+								<div class="add-row-t-10">
+									<p class="m-t-20">
+										<a href="" class="btn-green">
+											保存
+										</a>
+										<a href="" class=btn-gray>
+											取消
+										</a>
+									</p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

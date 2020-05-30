@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新增商品</title>
+	<link rel="stylesheet" href="<?= AC ?>order-goods.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>新增商品</small></h3>
+			</div>
+			<div class="ibox-content">	
+				<form method="post" action="index.php?c=goods&m=doAdd" enctype="multipart/form-data" class="form-main">
+
+					<div class="form-group">
+						<ul>
+							<li>
+								<span class="form-title">商品分类</span>
+									<select class="goods-cate" name="cid">
+										<?php foreach ($cateList as $k => $v): ?>
+           								<option value="<?= $v['id']?>" ><?= $v['nbsp'].$v['name']?></option>
+         								<?php endforeach ?>
+									</select>
+							
+							</li>
+							</li>
+							<li>
+								<span class="form-title">商品名称</span>
+								<input class="form-text" type="text"  name="name" placeholder="必填项目">
+							</li>
+							<li>
+								<span class="form-title" >商品图</span>
+								<input class="form-icon" name="icon" type="file" >
+								<em class="form-error">图标比例1：1，最佳尺寸500*500</em>
+							</li>
+							<li>
+								<span class="form-title">是否上架</span>
+								<label class="is-goods-sale"><input type="radio" name="up" value="1" checked>上架</label>
+								<label class="is-goods-sale"><input type="radio" name="up" value="2" >下架</label>
+							</li>
+							<li>
+								<span class="form-title">热品推荐</span>
+								<label class="is-goods-sale"><input type="radio" name="hot" value="1" checked>是</label>
+								<label class="is-goods-sale"><input type="radio" name="hot" value="2" >否</label>
+							</li>
+							<li>
+								<span class="form-title">价格</span>
+								<input class="goods-lower" type="number" name="price" placeholder="必填项目">
+							</li>
+							<li>
+								<span class="form-title">库存</span>
+								<input class="goods-lower" name="stock" type="number" placeholder="必填项目">
+							</li>
+
+							<li>
+								<span class="form-title">商品介绍</span>
+								<div class="ueditor-goods">
+									<textarea class="ueditor-goods-text" rows="3" cols="20" name="desc"></textarea>
+								</div>
+							</li>
+
+							<li>
+								<span class="form-title"></span>
+								<input class="form-submit-btn" type="submit" value="提交" name="">
+								<a href="index.php?c=goods" class="form-back-btn"  name="">返回</a>
+							</li>
+						</ul>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单管理</title>
+	<link rel="stylesheet" href="<?= AC ?>order-table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>评价列表<small>( <?= $count ?> ) 个</small></h3>
+			</div>
+			<div class="ibox-content">	
+				<form action="index.php" class="form-main" method="get">
+					<input type="hidden" name="c" value="evaluate">
+					<div class="form-search">
+						<input type="text"  class="form-control"  name="search"  placeholder="订单编号或用户名称" >
+						<input type="submit" class="search-btn" value="搜索">
+					</div>
+				</form>
+				<table class="list-table">
+					<thead>
+						<tr>
+                            <th width="8%">评价ID</th>
+                            <th width="8%">订单编号</th>
+                            <th width="10%">用户昵称</th>
+                            <th width="10%">评价级别</th>
+                            <th width="10%">是否显示</th>
+                            <th width="15%">操作</th>
+
+                       </tr>
+					</thead>
+					<tbody>
+						<?php if (empty($res)): ?>
+							<tr>
+								<td colspan="9">暂无用户评价信息</td>
+							</tr>
+						<?php else: ?>
+							<?php foreach ($res as $k => $v): ?>
+							<tr>
+								<td><?= $v['id']?></td>
+								<td><?= $v['ordernum']?></td>
+								<td><?= $v['name']?></td>
+								<td>	
+									<?php if ($v['score']== 1): ?>
+										好评
+									<?php elseif ($v['score']== 2): ?>
+										中评
+									<?php else: ?>
+										差评
+									<?php endif ?>
+								</td>
+								<td>
+								
+								<?php if ( $v['show']== 1 ): ?>
+									<a href="index.php?c=evaluate&m=isShow&id=<?= $v['id'] ?>">显示</a>
+									
+								<?php else: ?>
+									<a href="index.php?c=evaluate&m=isShow&id=<?= $v['id'] ?>">屏蔽</a>
+									
+								<?php endif ?>
+
+								</td>
+
+								<td>
+									<div class="btn-group">
+										<a href="index.php?c=evaluate&m=evaEdit&id=<?= $v['id'] ?>" class="btn-white">处理</a>
+										<a href="index.php?c=evaluate&m=delEva&id=<?= $v['id'] ?>" class="btn-white">删除</a>
+										
+										<a href="index.php?c=evaluate&m=evaInfo&id=<?= $v['id'] ?>" class="btn-white">查看</a>
+									</div>
+								</td>
+							</tr>
+							<?php endforeach ?>
+						<?php endif ?>
+					</tbody>
+				</table>
+				<div class="btn-limit-group">
+
+					<?= $page->showPage() ?>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

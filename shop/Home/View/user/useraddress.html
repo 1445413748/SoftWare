@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加收货地址</title>
+	<link rel="stylesheet" href="<?= HC ?>useraddress.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->usertop(); ?>
+	<div class="bd">
+		<div class="bd-s">
+			<?php $this->userleft(); ?>
+			<div class="data-bd">
+				<div class="user-data">
+					<div class="update-tit">
+						<span>添加收货地址</span>
+					</div>
+					<?php if (empty($res)): ?>
+						<div class="null">
+						暂无收货地址
+							<a href="index.php?c=mycenter&m=useradd" class="btn-add">立即添加</a>
+						</div>
+					<?php else: ?>
+						<div>
+							<ul>
+								<strong class="tit">我的地址</strong>
+								<?php foreach ($res as $k => $v): ?>		
+								<li>
+									<p  class="address" type="text" name="address">
+										<span><?= $v['username'] ?>,</span>
+										<span><?= $v['usertel'] ?>,</span>
+										<span> &nbsp;<?=$v['zipcode']?>,</span>
+										<span><?= $v['useraddress']?></span>
+										<a href="index.php?c=mycenter&m=deladdress&addressid=<?= $v['addressid']?>"> &nbsp;删除 
+										</a>
+										<a href="index.php?c=mycenter&m=editaddress&addressid=<?= $v['addressid']?>"> &nbsp;编辑 
+										</a>
+										<a href="index.php?c=mycenter&m=isdefault&userid=<?= $v['userid']?>&addressid=<?= $v['addressid']?>"><?= $v['isdefault'] == 1 ?  '默认' : '设为默认'?>&nbsp; 
+										</a>
+									</p>
+								</li>
+								<?php endforeach ?>
+								<div>
+									<a href="index.php?c=mycenter&m=useradd" class="add-btn"></a>
+								</div>
+							</ul>
+						</div>
+					</div>
+					<?php endif ?>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+<div style="padding-top:5%" align="center">@2020 1846小组 ICP备案号：<a href="http://beian.miit.gov.cn/" ;="" target="_blank">粤ICP备20027720号</a></div>
+		</div>
+	</div>	
+</body>
+</html>

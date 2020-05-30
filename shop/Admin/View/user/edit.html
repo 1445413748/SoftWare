@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新增用户</title>
+	<link rel="stylesheet" href="<?= AC ?>table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>修改用户</small></h3>
+			</div>
+			<div class="ibox-content">	
+				<form action="index.php?c=user&m=doEdit" class="form-main"  enctype="multipart/form-data" method="post">
+					
+					<div class="form-group">
+						<ul>
+							<input type="hidden" name="id" value="<?= $res['id']?>">
+							<li>
+								<span class="form-title">用户名</span>
+								<input class="form-text" name="name" type="text" maxlength="15" value="<?= $res['name']?>">
+							</li>
+							<li>
+								<span class="form-title">上传头像</span>
+								<input class="form-icon" name="icon" type="file" placeholder="选择上传图片">
+							</li>
+							<li>
+								<span class="form-title">手机号码</span>
+								<input class="form-text" name="tel" type="text" maxlength="11" value="<?= $res['tel']?>" >
+							</li>
+							<li>
+								<span class="form-title">输入密码</span>
+								<input class="form-text" maxlength="15" name="pwd" type="password" value="">
+							</li>
+							<li>
+								<span class="form-title">确认密码</span>
+								<input class="form-text" maxlength="15"  name="repwd" type="password" value="" >
+							</li>
+							<li>
+								<span class="form-title">邮箱</span>
+								<input class="form-text" maxlength="20" name="email" type="email" maxlength="20" value="<?= $res['email']?>">
+							</li>
+							<li>
+								<span class="form-title">地址</span>
+								<input class="form-text" maxlength="50" name="address" type="text" maxlength="20" value="<?= $res['address']?>">
+							</li>
+							<li>
+								<span class="form-title" style="outline: none;">状态</span>
+								<select name="status" id="level" class="status">
+       							  <option value="1" <?= $res['status']==1?'selected':'' ?>>&nbsp;&nbsp;激活</option>
+       							  <option value="2" <?= $res['status']==2?'selected':'' ?>>&nbsp;&nbsp;禁用</option>
+       							</select>
+							</li>
+							<li>
+								<span class="form-title"></span>
+								<input class="form-submit-btn" type="submit" value="提交">
+							</li>
+						</ul>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

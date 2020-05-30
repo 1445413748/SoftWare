@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360登陆</title>
+	<link rel="stylesheet" href="<?= HC ?>login.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<div class="login-box">
+		<div class="top-login">
+			<div class="logo-img"><a href=""><img src="<?= HI ?>DL-logo.png">
+			</a></div>
+		</div>
+	</div>
+	<!-- 背景图 -->
+	<div class="login-bgbox">
+		<div class="login-bg">
+			<div class="login-main">
+				<div class="panel">
+					<div class="panel-title">
+						<ul>
+							<li>
+							<a href=""><span>360账号登陆</span></a>
+							</li>
+							<li>
+							<a href="index.php?c=login&m=register"><i>立即注册</i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 登陆表单 -->
+				<form method="post" action="index.php?c=login&m=dologin">
+					<input type="text" class="user-name" name="tel" placeholder="手机号/用户名/邮箱">
+					<input type="password" class="password" name="pwd" placeholder="请输入密码" style="margin-bottom: 0px;">
+					<input type="text" class="password" name="code" placeholder="请输入验证码" style="width: 193px;display: inline-block;margin-left: 26px;vertical-align: middle;">
+					<img src="../Public/code.php" onclick="this.src=this.src" style="vertical-align: middle;height: 45px;cursor: pointer;" >
+					<input type="submit" value="登陆" class="submit" style="cursor: pointer">
+				</form>
+				<div class="retrieve-password">
+					<a href=""><p>快速注册</p></a>
+					<a href=""><span>找回密码</span></a>
+				</div>
+				<div class="other">
+					<div class="other-l"></div>
+					<div class="other-m">其他登录方式</div>
+					<div class="other-r"></div>
+				</div>
+				<!-- 其他登录方式 -->
+				<div class="way">
+					<div class="way-l">
+						<a href="" style="color:#4e9ff9 ">&#xe625;
+						</a>
+					</div>
+					<div class="way-l">
+						<a href=""  style="color:#57c710 ">&#xe60f;
+						</a>
+					</div>
+					<div class="way-l">
+						<a href="" style="color:#f65d6b ">&#xe65b;
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* 初始化 */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}   
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}   
+a{color:#2d374b;text-decoration:none;font-style: normal}   
+a:hover{color:#cd0200;}   
+em{font-style:normal}   
+li{list-style:none}   
+img{border:0;vertical-align:middle}   
+table{border-collapse:collapse;border-spacing:0}   
+p{word-wrap:break-word}  
+strong{font-weight:normal}
+
+
+
+/* 字体图标调用 */
+@font-face{
+	font-family: 'TB';
+	src: url('../iconfont/iconfont.ttf');
+}
+
+body{
+	font-family: 'TB','微软雅黑';
+	min-width: 1240px;
+}
+/* 360顶部灰色导航栏 */
+.top-warp{
+	width: 100%;
+	background: #e3e4e5;
+	/*height: 36px;*/
+}
+
+.top-main{
+	width: 1240px;
+	height: 36px;
+	margin: 0 auto;
+	line-height: 36px;
+	font-size: 12px;
+	/*border: 1px red solid;*/
+
+}
+.top-main a{
+	color: #999;
+}
+
+.top-main a:hover{
+	color: #23ac38;
+
+}
+
+.top-item-l{
+	float: left;
+	margin-right:10px; 
+}
+
+.top-item-r{
+	float: right;
+	margin-right:10px;
+}
+.top-main ul li:nth-child(3){
+	margin-right:0px;
+}
+
+.top-item-r i{
+	display: inline-block;
+	background:url(../images/head-icons1.png) no-repeat; 
+	height: 18px;
+	width: 18px;
+	vertical-align: middle;
+	margin-right: 5px;
+
+}
+
+/* 顶部logo */
+.lgbox{
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+.top-logo{
+	width: 1240px;
+	height: 118px;
+	margin: 0 auto;
+	/* border: 1px solid ; */
+}
+.logo{
+	width: 150px;
+	height: 118px;
+	line-height: 118px;
+	/* border: 1px solid red; */
+}
+.logo a img{
+	width: 150px;
+	height: 40px;
+}
+
+/* 购物车 */
+.cart-box{
+	width: 100%;
+}
+.gcart{
+	width: 1242px;
+	/* height: 456px; */
+    margin: 25px auto 29px;
+    border: 1px solid #DDD;
+}
+
+.hd{
+	height: 50px;
+    background: #FFF;
+    border-bottom: 1px solid #DDD;
+    line-height: 50px;
+    text-indent: 20px;
+}
+.hd h3{
+	font-weight: normal;
+    font-size: 18px;
+    color: #000;
+}
+/* 购物车表头 */
+.bd{
+    /* width: 100%; */
+    padding: 15px;
+}
+
+.null-cart{
+    width: 900px;
+    height: 268px;
+    background: url(../images/cart-empty.jpg) no-repeat; 
+}
+.null-cart a{
+    margin-left: 322px;
+    margin-top: 140px;
+    width: 158px;
+    height: 40px;
+    background: url(../images/gw-.png) 0 -1934px no-repeat;
+    float: left;
+}
+
+
+
+
+/* 底部 */
+
+.mod-footer{
+	width: 100%;
+	height: 460px;
+	/*border: 1px solid red;*/
+
+}
+.foot-banner{
+	width: 100%;
+    padding: 16px 0;
+    border-top: solid 1px #E8E8E8;
+    /*border-bottom: solid 1px #E8E8E8;*/
+}
+.foot-banner::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.foot-item{
+	width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+    color: #302E33;
+    font-size: 18px;
+}
+.icon7{
+	width: 33%;
+    float: left;
+    /* border-right: solid 1px #E8E8E8; */
+    height: 60px;
+    line-height: 60px;
+    color: #302E33;
+    text-align: center;
+    font-size: 18px;
+}
+
+.foot-banner i{
+	font-size: 40px;
+	color: #23AC38;
+	vertical-align: middle;
+    }
+
+.foot-help{
+	width: 100%;
+    padding: 16px 0;
+    border-top: solid 1px #E8E8E8;
+    border-bottom: solid 1px #E8E8E8;
+}
+.foot-help-main{
+	width: 1240px;
+	margin: 0 auto;
+}
+.foot-help-main::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.foot-help-main dl{
+	float: left;
+    padding-right: 0;
+    width: 16%;
+    margin-left: 100px;
+}
+
+.foot-help-main dl dt{
+	font-size: 16px;
+    color: #302E33;
+    line-height: 40px;
+}
+
+.foot-help-main dl dd{
+    color: #848484;
+    font-size: 12px;
+    line-height: 30px;
+}
+.foot-help-main dl dd a{
+	color: #848484;
+}
+.foot-help-main dl dd a:hover{
+	color: #77BE24;
+}
+
+.foot-help-main dl dd span{
+    font-size: 20px;
+    color: #4ABA00;
+    line-height: 40px;
+    vertical-align: top;
+}
+.foot-help-main dl:nth-child(3){
+	width: 22%;
+}
+.foot-help-main dl dd span i{
+
+	font-size: 12px;
+}
+.foot-help-main dl dd img{
+	width: 150px;
+	height: 190px;
+}
+.foot-help-main dl:nth-child(4){
+margin-left: 40px;
+}
+
+.copyright{
+	clear: both;
+    padding: 20px 0;
+    line-height: 40px;
+    font-size: 12px;
+    color: #848484;
+    text-align: center;
+
+}
+
+
+
+
+

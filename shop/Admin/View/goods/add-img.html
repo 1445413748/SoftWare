@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加单张图片</title>
+	<link rel="stylesheet" href="<?= AC ?>goods-table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>添加单张图片</small></h3>
+			</div>
+			<div class="ibox-content">	
+				<form action="index.php?c=goods&m=doAddimg" class="form-main" enctype="multipart/form-data" method="post">
+
+					<div class="form-group">
+						<ul>
+							<input type="hidden" name="gid" value="<?= $gid ?>">
+							<li>
+								<span class="form-title">商品图片</span>
+								<input class="form-icon" type="file" name="icon">
+							</li>
+							<li>
+								<span class="form-title">设置封面</span>
+								<label class="is-goods-sale"><input type="radio" value="1" name="face">封面</label>
+								<label class="is-goods-sale"><input type="radio" value="2" name="face" checked >非封面</label>
+							</li>
+							<li>
+								<span class="form-title"></span>
+								<input class="form-submit-btn" type="submit" value="提交" >
+								<a href="index.php?c=goods" class="form-back-btn">返回</a>
+							</li>
+						</ul>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

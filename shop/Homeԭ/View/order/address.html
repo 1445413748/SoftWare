@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收货地址</title>
+	<link rel="stylesheet" href="<?= HC ?>address.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<!-- 顶部导航栏	 -->
+	<?php $this->top(); ?>
+	<!-- 菜单部分 -->
+
+	<!-- body 开始 -->
+	<div class="user-body">
+		<div class="space"></div>
+		<div class="user-box">
+			<!-- 个人中心菜单 -->
+			<?php $this->orderleft(); ?>
+			<!-- 右侧主体部分开始 -->
+			<div class="user-main">
+				<div class="addr-box">
+					<h2>收货地址</h2>
+					<!-- 地址开始 -->
+					<div class="addr-main">
+						<div class="tab">
+							<table>
+								<tr>
+									<td>收货人姓名:
+									</td>
+									<td>张旭</td>
+									<td class="edit">
+										<a href="">
+											删除 
+										</a>
+										<span>&nbsp; | &nbsp; </span>
+										<a href="">
+											 编辑
+										</a>
+										<a href="">
+											 设为默认&nbsp;&nbsp;
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>收货人电话:</td>
+									<td>13215588205</td>
+								</tr>
+								<tr>
+									<td>收货人地址:
+									</td>
+									<td>上海市静安区龙软大厦F栋</td>
+								</tr>
+							</table>
+						</div>
+						<!-- 添加地址 -->
+						<div class="btn-add">
+							<a href="index.php?c=myorder&m=addaddress" class="add-btn"> 
+							</a>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 底部 -->
+	<?php $this->footer(); ?>
+</body>
+</html>

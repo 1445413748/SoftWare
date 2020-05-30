@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改密码</title>
+	<link rel="stylesheet" href="<?= HC ?>pwd.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<!-- 头部开始 -->
+	<?php $this->usertop(); ?>
+	<!-- 主体开始 -->
+	<div class="bd">
+		<div class="bd-s">
+			<!-- 左侧菜单 -->
+			<?php $this->userleft(); ?>
+			<!-- 右侧资料主体 -->
+			<div class="data-bd">
+				<!-- 修改密码 -->
+				<div class="pwd-box">
+					<div class="title">
+						<strong>修改密码</strong>
+					</div>
+					<div class="pwd">
+						<form action="index.php?c=mycenter&m=uppwd" method="post">
+							<ul>
+								<li>
+									<input type="hidden" name="id" value="<?= $res['id'] ?>">
+									<span>请输入原密码</span>
+									<input type="password" name="password" class="ipt" 			placeholder="6-15位  	以字母数字组合">
+								</li>
+								<li>
+									<span>请输入新密码</span>
+									<input type="password" name="pwd" class="ipt" 			placeholder="6-15位   以字母数字组合">
+								</li>
+								<li>
+									<span>再次确认密码</span>
+									<input type="password" name="repwd" class="ipt" 			placeholder="6-15位  	以字母数字组合">
+								</li>
+							</ul>
+							<span>
+								<input type="submit" value="确认修改">
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>	
+</body>
+</html>

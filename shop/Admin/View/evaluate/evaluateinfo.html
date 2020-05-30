@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评价详情</title>
+	<link rel="stylesheet" href="<?= AC ?>order-table.css">
+</head>
+<body>
+	<div class="table-wrap">
+		<div class="table-main">
+			<div class="ibox-title">
+				<h3>评论详情</small></h3>
+			</div>
+			<div class="ibox-content">	
+					<div class="form-group">
+						<ul>
+							<li>
+								<span class="form-title">评价ID</span>
+								<span class="form-username"><?= $res['id'] ?></span>
+								
+							</li>
+							<li>
+								<span class="form-title">商品ID</span>
+								<span class="form-username"></span>
+								<?= $res['goodsid'] ?>
+							</li>
+							<li>
+								<span class="form-title">商品名称</span>
+								<span class="form-username"><?= $res['name'] ?></span>
+								
+							</li>
+							<li>
+								<span class="form-title">评论时间</span>
+								<span class="form-username"><?= $res['createtime'] ?></span>
+							</li>
+							
+							<li>
+								<span class="form-title">商品评价</span>
+								<span class="form-username" style="width: 70%; vertical-align: middle; line-height: 30px;"><?= $res['content'] ?></span>
+								
+							</li>
+
+							<li>
+								<span class="form-title">回复时间</span>
+								<span class="form-username"><?= $res['replytime'] ?></span>
+								
+							</li>
+
+							<li>
+								<span class="form-title">卖家回复</span>
+								<span class="form-username" style="width: 70%; vertical-align: middle; line-height: 30px;"><?= $res['reply'] ?></span>
+								
+							</li>
+
+							<li>
+								<span class="form-title"></span>
+								<a href="index.php?c=evaluate" class="form-back-btn"  name="" style="margin-left: -65px;">返回</a>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

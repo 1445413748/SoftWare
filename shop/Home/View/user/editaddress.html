@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加收货地址</title>
+	<link rel="stylesheet" href="<?= HC ?>useradd.css">
+	<link rel="icon" href="<?= HI ?>favicon.ico">
+</head>
+<body>
+	<?php $this->usertop(); ?>
+	<div class="bd">
+		<div class="bd-s">
+			<?= $this->userleft(); ?>
+			<div class="data-bd">
+				<div class="user-data">
+					<div class="update-tit">
+						<span>添加收货地址</span>
+					</div>
+					<form action="index.php?c=mycenter&m=doeditaddress" method="post">
+						<ul>
+							<input type="hidden" name="addressid" value="<?= $res['addressid'] ?>">
+							<input type="hidden" name="userid" value="<?= $_SESSION['user']['id']?>">
+							<li>
+								<p><label>收货人姓名</label></p>
+								<input type="text" class="addaddress" name="username" maxlength="20" value="<?= $res['username']?>">
+							</li>
+							<li>
+								<p><label>联系电话</label></p>
+								<input type="text" class="addaddress" name="usertel" maxlength="11" value="<?= $res['usertel'] ?>">
+							</li>
+							<li>
+								<p><label>邮政编码</label></p>
+								<input type="text" class="addaddress" name="zipcode" maxlength="6" value="<?= $res['zipcode']?>">
+							</li>
+							<li>
+								<p><label>收货地址</label></p>
+								<input type="text" class="address" name="useraddress" maxlength="50" value="<?= $res['useraddress']?>">
+							</li>
+						</ul>
+						<div class="sub-box">
+							<input type="submit" name="" value="保存修改">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+<div style="padding-top:5%" align="center">@2020 1846小组 ICP备案号：<a href="http://beian.miit.gov.cn/" ;="" target="_blank">粤ICP备20027720号</a></div>
+		</div>
+	</div>	
+</body>
+</html>

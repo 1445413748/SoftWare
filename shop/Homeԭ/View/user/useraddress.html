@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加收货地址</title>
+	<link rel="stylesheet" href="<?= HC ?>useraddress.css">
+	<link rel="icon" href="<?= HI ?>favicon (1).ico">
+</head>
+<body>
+	<!-- 头部开始 -->
+	<?php $this->usertop(); ?>
+	<!-- 主体开始 -->
+	<div class="bd">
+		<div class="bd-s">
+			<!-- 左侧菜单 -->
+			<?php $this->userleft(); ?>
+			<!-- 右侧资料主体 -->
+			<div class="data-bd">
+				<!-- 个人资料 -->
+				<div class="user-data">
+					<div class="update-tit">
+						<span>添加收货地址</span>
+					</div>
+					<?php if (empty($res)): ?>
+						<!-- 空地址 -->
+						<div class="null">
+						暂无收货地址
+							<a href="index.php?c=mycenter&m=useradd" class="btn-add">立即添加</a>
+						</div>
+					<?php else: ?>
+						<!-- 有地址 -->
+						<div>
+							<ul>
+								<strong class="tit">我的地址</strong>
+								<?php foreach ($res as $k => $v): ?>		
+								<li>
+									<p  class="address" type="text" name="address">
+										<span><?= $v['username'] ?>,</span>
+										<span><?= $v['usertel'] ?>,</span>
+										<span> &nbsp;<?=$v['zipcode']?>,</span>
+										<span><?= $v['useraddress']?></span>
+										<a href="index.php?c=mycenter&m=deladdress&addressid=<?= $v['addressid']?>"> &nbsp;删除 
+										</a>
+										<a href="index.php?c=mycenter&m=editaddress&addressid=<?= $v['addressid']?>"> &nbsp;编辑 
+										</a>
+										<a href="index.php?c=mycenter&m=isdefault&userid=<?= $v['userid']?>&addressid=<?= $v['addressid']?>"><?= $v['isdefault'] == 1 ?  '默认' : '设为默认'?>&nbsp; 
+										</a>
+									</p>
+								</li>
+								<?php endforeach ?>
+								<div>
+									<a href="index.php?c=mycenter&m=useradd" class="add-btn"></a>
+								</div>
+							</ul>
+						</div>
+					</div>
+					<?php endif ?>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- 底部 -->
+	<div class="bottom-box">
+		<div class="bottom-copyright">
+			<p>Copyright©2005-2015 360.CN All Rights Reserved 360安全中心</p>
+			<p>京ICP证080047号[京ICP备08010314号-6]</p>
+			<p>京公网安备 11000002000006号</p>
+		</div>
+	</div>	
+</body>
+</html>
